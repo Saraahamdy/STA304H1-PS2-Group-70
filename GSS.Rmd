@@ -1,0 +1,279 @@
+---
+title: "GSS 2014 CSV"
+author: "Sara Hamdy, Colin Conant, and Jack Smith"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("janitor")
+```
+
+
+
+```{r}
+library(janitor)
+library(tidyverse)
+
+```
+
+*We will load the csv file with out data from the 2014 GSS, and its dictionary and labels*
+
+```{r}
+raw_data <- read_csv("AAa6cvwY.csv")
+dict <- read_lines("gss_dict.txt", skip = 18) 
+labels_raw <- read_file("gss_labels.txt")
+```
+
+*We preform cleaning and organizing of our csv file*
+
+```{r, echo=FALSE}
+
+variable_descriptions <- as_tibble(dict) %>% 
+  filter(value!="}") %>% 
+  mutate(value = str_replace(value, ".+%[0-9].*f[ ]{2,}", "")) %>% 
+  mutate(value = str_remove_all(value, "\"")) %>% 
+  rename(variable_description = value) %>% 
+  bind_cols(tibble(variable_name = colnames(raw_data)[-1]))
+
+
+
+labels_raw_tibble <- as_tibble(str_split(labels_raw, ";")[[1]]) %>% 
+  filter(row_number()!=1) %>% 
+  mutate(value = str_remove(value, "\nlabel define ")) %>% 
+  mutate(value = str_replace(value, "[ ]{2,}", "XXX")) %>% 
+  mutate(splits = str_split(value, "XXX")) %>% 
+  rowwise() %>% 
+  mutate(variable_name = splits[1], cases = splits[2]) %>% 
+  mutate(cases = str_replace_all(cases, "\n [ ]{2,}", "")) %>%
+  select(variable_name, cases) %>% 
+  drop_na()
+
+
+labels_raw_tibble <- labels_raw_tibble %>% 
+  mutate(splits = str_split(cases, "[ ]{0,}\"[ ]{0,}"))
+
+
+add_cw_text <- function(x, y){
+  if(!is.na(as.numeric(x))){
+    x_new <- paste0(y, "==", x,"~")
+  }
+  else{
+    x_new <- paste0("\"",x,"\",")
+  }
+  return(x_new)
+}
+
+
+
+cw_statements <- labels_raw_tibble %>% 
+  rowwise() %>% 
+  mutate(splits_with_cw_text = list(modify(splits, add_cw_text, y = variable_name))) %>% 
+  mutate(cw_statement = paste(splits_with_cw_text, collapse = "")) %>% 
+  mutate(cw_statement = paste0("case_when(", cw_statement,"TRUE~\"NA\")")) %>% 
+  mutate(cw_statement = str_replace(cw_statement, ",\"\",",",")) %>% 
+  select(variable_name, cw_statement)
+
+cw_statements <- 
+  cw_statements %>% 
+  mutate(variable_name = str_remove_all(variable_name, "\\r")) %>% 
+  mutate(cw_statement = str_remove_all(cw_statement, "\\r"))
+
+```
+
+*We select the varaibles that could be useful to our analysis*
+
+```{r}
+gss <- raw_data %>% 
+  select(CASEID,
+         acs1020,
+         adp2030, 
+         agearrc, 
+         agelswkc, 
+         brthmacc,
+         cextalk,
+         cex_040c,
+         cex_065c,
+         chh0014c,
+         cwp_5080, 
+         dnmov5yr, 
+         dur_115c,
+         eop_200c,
+         hhincg1,
+         hhsizec,
+         incg1,
+         mrarel, 
+         parnumc, 
+         prtypec,
+         pfc_140,
+         relprflg,
+         yrlndimm, 
+         ahe_10, 
+         brthcan,
+         brthregc, 
+         ctzship,
+         cbu_100, 
+         cbu_110,
+         cbu_120, 
+         cbu_125,
+         cbu_130, 
+         cbu_140, 
+         cbu_150, 
+         cexabu,
+         cexphys,
+         cexsex,
+         cex_070a,
+         cex_070b,
+         cex_070c,
+         cex_080,
+         cip_10,
+         cwp_160,
+         agegr10,
+         region,
+         sex,
+         dis_45,
+         dis_rind,
+         dup_100,
+         dur_100,
+         dur_110,
+         ehg3_01,
+         eduf10,
+         edum10,
+         aprgrdif,
+         livarr12,
+         hom_10,
+         lan_01,
+         live_loc,
+         vismin,
+         nsc_30) %>% 
+  mutate_at(vars(CASEID:nsc_30), .funs = funs(ifelse(.>=96, NA, .))) %>% 
+  mutate_at(.vars = vars(CASEID:nsc_30),
+            .funs = funs(eval(parse(text = cw_statements %>%
+                                      filter(variable_name==deparse(substitute(.))) %>%
+                                      select(cw_statement) %>%
+                                      pull()))))
+
+```
+
+*We rename the selected variables*
+
+```{r}
+gss <- gss %>% 
+  clean_names() %>% 
+  rename(Abused_by_child_relative_friend_caregiver=acs1020,
+         Experienced_physical_sexual_violence_partner=adp2030, 
+         First_lived_in_Canada=agearrc, 
+         Age_when_last_did_paid_work=agelswkc, 
+         Place_of_birth=brthmacc,
+         Childhood_victim_spoke=cextalk,
+         Child_relation_physical=cex_040c,
+         Child_relation_sexual=cex_065c,
+         children_in_household=chh0014c,
+         Contact_with_police=cwp_5080, 
+         times_moved=dnmov5yr, 
+         drug_use=dur_115c,
+         partner_education=eop_200c,
+         household_income=hhincg1,
+         household_size_R=hhsizec,
+         income=incg1,
+         number_of_parents_R=parnumc, 
+         partner_type_R=prtypec,
+         self_defence=pfc_140,
+         Religious_affiliation_R=relprflg,
+         immigrant_status=yrlndimm, 
+         feeling_of_safety_home=ahe_10, 
+         Born_in_Canada=brthcan,
+         R_place_of_birt=brthregc, 
+         R_citizenship=ctzship,
+         Internet_use=cbu_100, 
+         Cyber_bullying_comments=cbu_110,
+         Cyber_bullying_pictures=cbu_125,
+         Cyber_bullying_other=cbu_140, 
+         childhood_assault=cexabu,
+         childhood_physical_abuse=cexphys,
+         childhood_sexual_abuse=cexsex,
+         abuse_reported_police=cex_070a,
+         abuse_reported_cps=cex_070b,
+         abuse_not_reported=cex_070c,
+         child_witnessed_parental_abuse=cex_080,
+         confidence_in_police=cip_10,
+         contact_police_mental_drugs=cwp_160,
+         R_age_group=agegr10,
+         R_region=region,
+         R_sex=sex,
+         physical_mental_disability=dis_45,
+         partner_use_marijuana=dup_100,
+         R_use_marijuana=dur_100,
+         R_use_drugs=dur_110,
+         Education=ehg3_01,
+         Father_education=eduf10,
+         Mother_education=edum10,
+         R_spouse_age_diff=aprgrdif,
+         R_living_arrangement=livarr12,
+         Homeless=hom_10,
+         Official_language_knowledge=lan_01,
+         Length_living_in_community=live_loc,
+         visible_minority=vismin,
+         feeling_of_safety_walking=nsc_30) 
+
+```
+
+*We edit the variables we picked by altering some responses to NA and changing some string responses to numbers*
+
+```{r}
+gss <- gss %>% 
+  mutate_at(vars(Abused_by_child_relative_friend_caregiver:feeling_of_safety_walking), 
+            .funs = funs(ifelse(.=="Valid skip"|.=="Refusal"|.=="Not stated", "NA", .)))
+
+
+
+gss<-gss%>%
+  rowwise() %>%
+  mutate(self_defence = str_remove(string = self_defence, pattern ="\\.*")) %>%
+  mutate(self_defence = case_when(
+    self_defence=="Yes" ~ 1,
+    self_defence=="No"~ 0
+         ))
+
+gss <- gss %>% 
+  rowwise() %>% 
+  mutate(feeling_of_safety_walking = str_remove(string = feeling_of_safety_walking, pattern = " " )) %>% 
+  mutate(feeling_of_safety_walking = case_when(
+    feeling_of_safety_walking=="Verysafe" ~ 1,
+    feeling_of_safety_walking=="Reasonablysafe" ~ 2,
+    feeling_of_safety_walking=="Somewhatunsafe" ~ 3,
+    feeling_of_safety_walking=="Veryunsafe" ~ 4,
+    feeling_of_safety_walking=="Donot walk alone" ~ 5,
+    feeling_of_safety_walking=="Validskip" ~ 6,
+  )) 
+
+gss <- gss %>% 
+  rowwise() %>% 
+  mutate(R_sex = str_remove(string = R_sex, pattern = " " )) %>% 
+  mutate(R_sex = case_when(
+    R_sex=="Male" ~ 0,
+    R_sex=="Female" ~ 1,
+  )) 
+
+gss <- gss %>% 
+  rowwise() %>% 
+  mutate(Length_living_in_community = str_remove(string = Length_living_in_community, pattern = " " )) %>% 
+  mutate(Length_living_in_community = case_when(
+    Length_living_in_community=="Lessthan 6 months" ~ 1,
+    Length_living_in_community=="6months to less than 1 year" ~ 2,
+    Length_living_in_community=="1year to less than 3 years" ~ 3,
+    Length_living_in_community=="3years to less than 5 years" ~ 4,
+    Length_living_in_community=="5years to less than 10 years" ~ 5,
+    Length_living_in_community=="10years and over" ~ 6,
+    Length_living_in_community=="Validskip" ~ 7,
+    Length_living_in_community=="Don'tknow" ~ 8,
+    Length_living_in_community=="Refusal" ~ 9,
+    Length_living_in_community=="Notstated" ~ 10
+  )) 
+write_csv(gss, "gss.csv")
+
+
+
+```
+
+
