@@ -1,0 +1,2648 @@
+*******************************************************************
+*  Stata "do-file" file with labels and missing data specifications
+*  Created by ddltox on Oct 11, 2020  (Sun 07:32 PM EDT)
+*  DDL source file: "/web/sda.artsci.utoronto.ca/htdocs/sdaweb/tmpdir/AAE8onLy.txt".
+*
+*  Note that the data dictionary is given at the end of this file.
+*  Put the dictionary into a separate file (by editing this file).
+*  Then specify below the name of the dictionary file.
+*
+*  DDL file gives the following dataset description:
+*    Records per case: 1
+*    Record length:    6169
+*******************************************************************
+
+
+label data "GSS Cycle 28, 2014 Main"
+
+#delimit ;
+label define acs1020   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define adp2030   
+                       1 "Experienced phys. and/or sexual violence by dating partner" 
+                       2 "Did not experience phys. and/or sex. viol. by dating partner" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define agearrc   1 "0 to 4" 2 "5 to 9" 3 "10 to 14" 4 "15 to 19" 
+                       5 "20 to 24" 6 "25 to 29" 7 "30 to 34" 8 "35 to 39" 
+                       9 "40 to 44" 10 "45 to 49" 11 "50 years and over" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define ageldimm  1 "0 to 4" 2 "5 to 9" 3 "10 to 14" 4 "15 to 19" 
+                       5 "20 to 24" 6 "25 to 29" 7 "30 to 34" 8 "35 to 39" 
+                       9 "40 to 44" 10 "45 to 49" 11 "50 years and over" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define agelswkc  65 "65+" 95 "Never worked" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define brthmacc  1 "Americas" 2 "Europe" 3 "Africa" 4 "Asia" 
+                       5 "Oceania / Antarctica and adjacent islands" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define cextalk   
+                       1 "Talked to someone (family, friend, teacher, priest, etc.)" 
+                       2 "Did not talk to anyone" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define cex_040c  1 "Parent" 2 "Other family" 
+                       3 "Acquaintance/friend/neighbour/classmate" 
+                       4 "Authority figure" 5 "Stranger" 
+                       6 "Other/known by sight" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define cex_065c  1 "Parent" 2 "Other family" 
+                       3 "Acquaintance/friend/neighbour/classmate" 
+                       4 "Authority figure" 5 "Stranger" 
+                       6 "Other/known by sight" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define chh0014c  0 "None" 1 "One" 2 "Two" 3 "Three or more children" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define chrhsdc   0 "None" 1 "One" 2 "Two" 3 "Three" 
+                       4 "Four or more children" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define cwp_5080  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dnmov5yr  0 "No moves" 1 "One move" 2 "Two moves" 
+                       3 "Three moves" 4 "Four or more moves" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define dur_115c  1 "At least once a week" 
+                       2 "Once or twice in the past month" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define eop_200c  1 "Earned doctorate (Ph.D., D.Sc., D.Ed.)" 
+                       2 "Masters (M.A., M.Sc., M.Ed.)" 
+                       3 "Degree in Medicine, Dentistry, VeterinaryMedicine/Optometry" 
+                       4 "Bachelor or undergraduate degree, or teachers college" 
+                       5 "Diploma/certificate community college, CEGEP/nursing school" 
+                       6 "Dipl/cert trade, tech/vocational school, or business college" 
+                       7 "Some university" 
+                       8 "Some community college, CEGEP or nursing school" 
+                       9 "Some trade, technical, vocational school, business college" 
+                       10 "High school diploma" 11 "Some high school" 
+                       12 "Elementary school diploma" 13 "Some elementary" 
+                       14 "No schooling/other" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define hhincg1   1 "Less than $20,000" 2 "$20,000 to $39,999" 
+                       3 "$40,000 to $59,999" 4 "$60,000 to $79,999" 
+                       5 "$80,000 to $99,999" 6 "$100,000 to $119,999" 
+                       7 "$120,000 to $139,999" 8 "$140,000 or more" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define hhsizec   1 "One household member" 2 "Two household members" 
+                       3 "Three household members" 4 "Four household members" 
+                       5 "Five household members" 
+                       6 "Six household members or more" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define incg1     1 "Less than $20,000" 2 "$20,000 to $39,999" 
+                       3 "$40,000 to $59,999" 4 "$60,000 to $79,999" 
+                       5 "$80,000 to $99,999" 6 "$100,000 to $119,999" 
+                       7 "$120,000 or more" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define mrarel    1 "Stranger" 2 "Spouse/ex-spouse" 
+                       3 "Boyfriend/girlfriend/ex-boyfriend/ex-girlfriend" 
+                       4 "Other relative" 5 "Other" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define msi       1 "Wages and salaries" 2 "Self-employment income" 
+                       3 "Government transfers" 4 "Investment income" 
+                       5 "Private retirement pensions" 6 "Other" 
+                       7 "All sources = 0 (or no income)" 8 "Unspecified" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define numvactc  0 "None" 32 "32 or more" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define parnumc   0 "No parents" 1 "One parent" 2 "Two parents" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define prtypec   0 "Respondent has no spouse/partner in the household" 
+                       1 "Respondent has an opposite sex married spouse in household" 
+                       2 "Respondent has opposite sex common-law partner in household" 
+                       3 "Respondent has same-sex spouse/partner in household" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define religflg  1 "Religious affialiation" 
+                       2 "No religious affiliation" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define relprflg  1 "Religious affiliation" 2 "No religious affiliation" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define rns370_c  1 "Fear of revenge by the stalker or others" 
+                       2 "Police could not find/identify the stalker" 
+                       3 "Lack of evidence" 
+                       4 "Police would not have considered incident important enough" 
+                       5 "Police would not have been efficient or effective" 
+                       6 "Unsatisfactory service in the past" 
+                       7 "Reporting didn't succeed/dealing with police cause trouble" 
+                       8 "Did not want the stalker in trouble with the law" 
+                       9 "Did not want the hassle of dealing with police" 
+                       10 "Incident private and handled it informally" 
+                       11 "Did not want others to find out (incl. publicity/news)" 
+                       12 "Crime was minor and not worth time to report" 
+                       13 "No one was harmed / no financial loss" 
+                       14 "No harm was intended" 
+                       15 "Didn't think stalker will be convicted/adequalty punished" 
+                       16 "Fear/didn't want hassle of dealing with the courts" 
+                       17 "Police would be biaised" 
+                       18 "It was reported to another official" 19 "Other" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define wti_120c  75 "75 or more hours" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define yrlndimm  1 "Before 1946" 2 "1946 to 1959" 3 "1960 to 1964" 
+                       4 "1965 to 1969" 5 "1970 to 1974" 6 "1975 to 1979" 
+                       7 "1980 to 1984" 8 "1985 to 1989" 9 "1990 to 1994" 
+                       10 "1995 to 1999" 11 "2000 to 2004" 12 "2005 to 2009" 
+                       13 "2010 to 2014" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define adp_010   1 "Yes" 2 "No" 3 "Did not date in the past 5 years" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define ahe_10    1 "Very worried" 2 "Somewhat worried" 
+                       3 "Not at all worried about your safety from crime" 
+                       4 "Never alone" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define aip_01    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define amb_01    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define bpr_02c   10 "Newfoundland and Labrador" 
+                       11 "Prince Edward Island" 12 "Nova Scotia" 
+                       13 "New Brunswick" 24 "Quebec" 35 "Ontario" 
+                       46 "Manitoba" 47 "Saskatchewan" 48 "Alberta" 
+                       59 "British Columbia" 95 "Territories" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define bpr_16    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define brthcan   1 "Born in Canada" 2 "Born outside Canada" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define brthfcan  1 "Born in Canada" 2 "Born outside Canada" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define brthmcan  1 "Born in Canada" 2 "Born outside Canada" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define brthpcan  1 "Born in Canada" 2 "Born outside Canada" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define brthregc  
+                       1 "Born in Canada, province of residence=province of birth" 
+                       2 "Born in Canada, province of residence not province of birth" 
+                       3 "Born in Canada, province of birth unknown/not stated" 
+                       4 "Born outside Canada, in North America (excl. Canada), South" 
+                       5 "Born outside Canada, in Asia, Africa, Oceania or Antarctica" 
+                       6 "Born outside Canada, region not stated/unknown/refused" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define ctzship   1 "Canadian only" 2 "Canadian and other" 3 "Others" 
+                       4 "Unable to determine" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define yrarri    1 "Prior to 1946" 2 "1946 to 1959" 3 "1960 to 1964" 
+                       4 "1965 to 1969" 5 "1970 to 1974" 6 "1975 to 1979" 
+                       7 "1980 to 1984" 8 "1985 to 1989" 9 "1990 to 1994" 
+                       10 "1995 to 1999" 11 "2000 to 2004" 12 "2005 to 2009" 
+                       13 "2010 to 2014" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define recid     99996 "Valid skip" 99997 "Don't know" 99998 "Refusal" 
+                       99999 "Not stated" ;
+label define wght_hsd  99999.9996 "Valid skip" 99999.9997 "Don't know" 
+                       99999.9998 "Refusal" 99999.9999 "Not stated" ;
+label define wght_per  99999.9996 "Valid skip" 99999.9997 "Don't know" 
+                       99999.9998 "Refusal" 99999.9999 "Not stated" ;
+label define cbu_100   1 "Daily" 2 "A few times a week" 3 "Once a week" 
+                       4 "A few times a month" 5 "Once a month" 
+                       6 "Less than once a month" 7 "Rarely" 8 "Never" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define cbu_110   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cbu_120   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cbu_125   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cbu_130   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cbu_140   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cbu_150   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cexabu    1 "Never" 2 "Both physical and sexual abuse" 
+                       3 "Physical or sexual abuse" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define cexphys   1 "Never" 2 "Yes, at least once" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define cexsex    1 "Never" 2 "Yes, at least once" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define cex_070a  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cex_070b  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cex_070c  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cex_080   1 "Never" 2 "1 or 2 times" 3 "3 to 5 times" 
+                       4 "6 to 10 times" 5 "More than 10 times" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define cip_10    1 "A great deal of confidence" 2 "Some confidence" 
+                       3 "Not very much confidence" 4 "No confidence at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define mshsd     405 "Break and enter" 406 "Attempted break and enter" 
+                       507 "Motor vehicle theft" 
+                       508 "Part of a motor vehicle theft" 
+                       509 "Attempted motor vehicle (parts) theft" 
+                       711 "Theft of household property" 
+                       712 "Attempted theft of household property" 
+                       813 "Vandalism" 994 "Not asked - no crime reported" 
+                       995 "Unclassifiable" 996 "Valid skip" 997 "Don't know" 
+                       998 "Refusal" 999 "Not stated" ;
+label define msper     101 "Sexual assault" 202 "Robbery" 
+                       203 "Attempted robbery" 304 "Assault" 
+                       405 "Break and enter" 406 "Attempted break and enter" 
+                       507 "Motor vehicle theft" 
+                       508 "Part of a motor vehicle theft" 
+                       509 "Attempted motor vehicle (parts) theft" 
+                       609 "Theft of personal property" 
+                       610 "Attempted theft of personal property" 
+                       711 "Theft of household property" 
+                       712 "Attempted theft of household property" 
+                       813 "Vandalism" 994 "Not asked - no crime reported" 
+                       995 "Unclassifiable" 996 "Valid skip" 997 "Don't know" 
+                       998 "Refusal" 999 "Not stated" ;
+label define msvic     101 "Sexual assault" 202 "Robbery" 
+                       203 "Attempted robbery" 304 "Assault" 
+                       405 "Break and enter" 406 "Attempted break and enter" 
+                       507 "Motor vehicle theft" 
+                       508 "Part of a motor vehicle theft" 
+                       509 "Attempted motor vehicle (parts) theft" 
+                       609 "Theft of personal property" 
+                       610 "Attempted theft of personal property" 
+                       711 "Theft of household property" 
+                       712 "Attempted theft of household property" 
+                       813 "Vandalism" 994 "Not asked - no crime reported" 
+                       995 "Unclassifiable" 996 "Valid skip" 997 "Don't know" 
+                       998 "Refusal" 999 "Not stated" ;
+label define cwp_110   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cwp_120   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cwp_140   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cwp_160   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define cwp_170   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define agegr10   1 "15 to 24" 2 "25 to 34" 3 "35 to 44" 4 "45 to 54" 
+                       5 "55 to 64" 6 "65 to 74" 7 "75 years and older" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define luc_rst   1 "Larger urban population centres (CMA/CA)" 
+                       2 "Rural areas/small population centres (non-CMA/CA)" 
+                       3 "Prince Edward Island" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define region    1 "Atlantic region" 2 "Quebec" 3 "Ontario" 
+                       4 "Prairie region" 5 "British Columbia" 
+                       6 "Territories" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define sex       1 "Male" 2 "Female" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define discrim   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_15    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_20    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_25    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_35    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_40    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_45    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_50    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_55    1 "Yes - Specify" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_rind  0 "No discrimination experienced" 1 "Single response" 
+                       2 "Multiple responses" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dwelc     1 "Single detached house" 
+                       2 "Low-rise apartment (less than 5 stories)" 
+                       3 "High-rise apartment (5 or more stories)" 4 "Other" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define drp_110   1 "Every day" 2 "4-6 times a week" 
+                       3 "2-3 times a week" 4 "Once a week" 
+                       5 "Once or twice in the past month" 
+                       6 "Not in the past month" 7 "Never drinks" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define drp_120   0 "Never" 95 "Less than once a month" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define drr_110   1 "Every day" 2 "4-6 times a week" 
+                       3 "2-3 times a week" 4 "Once a week" 
+                       5 "Once or twice in the past month" 
+                       6 "Not in the past month" 7 "Never drinks" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define drr_120   0 "Never" 95 "Less than once a month" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define dcog_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ddis_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dhea_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dmen_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dphy_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dunk_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dvis_fl   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dis_pl    1 "Single place or situation" 
+                       2 "Multiple places or situations" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define dts_20    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dts_25    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dts_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dts_35    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dts_60    1 "Yes" 2 "No" 
+                       3 "Have not crossed the border into Canada in past 5 years" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define dts_65    1 "Yes - Specify" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dup_100   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dup_105   1 "Every day" 2 "4-6 times a week" 
+                       3 "2-3 times a week" 4 "Once a week" 
+                       5 "Once or twice in the past month" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define dur_100   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dur_105   1 "Every day" 2 "4-6 times a week" 
+                       3 "2-3 times a week" 4 "Once a week" 
+                       5 "Once or twice in the past month" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define dur_110   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ehg3_01   1 "Less than high school diploma or its equivalent" 
+                       2 "High school diploma/high school equivalency certificate" 
+                       3 "Trade certificate or diploma" 
+                       4 "College, CEGEP/other non-university certificate or diploma" 
+                       5 "University certificate or diploma below the bachelor's level" 
+                       6 "Bachelor's degree (e.g. B.A., B.Sc., LL.B.)" 
+                       7 "University certificate, diploma/degree above bachelor's" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define ehg3_02   1 "High school graduation diploma" 
+                       2 "High school equivalency certificate" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define ehg3_03   1 "Registered Apprenticeship certificate" 
+                       2 "Other trades certif./dipl. trade school/ prof. trng center" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define ehg3_04   1 "Less than 3 months" 
+                       2 "3 months to less than 1 year" 3 "1 year to 2 years" 
+                       4 "More than 2 years" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ehg3_05   
+                       1 "University certificate or diploma above the bachelor's level" 
+                       2 "Degree in medicine/dentistry/veterinary medicine/optometry" 
+                       3 "Master's degree" 4 "Earned doctorate" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define eduf10    1 "Doctorate/masters/some graduate" 
+                       2 "Bachelor's degree" 
+                       3 "Diploma/certificate from community college" 
+                       4 "Diploma/certificate from trade/technical" 
+                       5 "Some university" 
+                       6 "Some community college/CEGEP/nursing" 
+                       7 "Some trade/technical" 8 "High school diploma" 
+                       9 "Some secondary/high school" 
+                       10 "Elementary school/no school" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define eduf5     1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diploma/cert. from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define edum10    1 "Doctorate/masters/some graduate" 
+                       2 "Bachelor's degree" 
+                       3 "Diploma/certificate from community college" 
+                       4 "Diploma/certificate from trade/technical" 
+                       5 "Some university" 
+                       6 "Some community college/CEGEP/nursing" 
+                       7 "Some trade/technical" 8 "High school diploma" 
+                       9 "Some secondary/high school" 
+                       10 "Elementary school/no school" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define edum5     1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diploma/cert. from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define edupr10   1 "Doctorate/masters/some graduate" 
+                       2 "Bachelor's degree" 
+                       3 "Diploma/certificate from community college" 
+                       4 "Diploma/certificate from trade/technical" 
+                       5 "Some university" 
+                       6 "Some community college/CEGEP/nursing" 
+                       7 "Some trade/technical" 8 "High school diploma" 
+                       9 "Some secondary/high school" 
+                       10 "Elementary school/no school" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define edupr5    1 "Doctorate/masters/bachelor's degree" 
+                       2 "Diploma/cert. from community college or trade/technical" 
+                       3 "Some university/community college" 
+                       4 "High school diploma" 
+                       5 "Some secondary/elementary/no schooling" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define eor_01a   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define eor_01b   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define eor_01c   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define eor_02    1 "A full-time student" 2 "A part-time student" 
+                       3 "Both full-time and part-time student" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define esc1_01   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define agechryg  1 "00 to 04" 2 "05 to 09" 3 "10 to 14" 4 "15 to 19" 
+                       5 "20 to 24" 6 "25 years and older" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define ageprg10  1 "15 to 24" 2 "25 to 34" 3 "35 to 44" 4 "45 to 54" 
+                       5 "55 to 64" 6 "65 to 74" 7 "75 years and older" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define aprgrdif  1 "Respondent is 11 + years older" 
+                       2 "Respondent is 6 to 10 years older" 
+                       3 "Respondent is 5 years older" 
+                       4 "Respondent is 4 years older" 
+                       5 "Respondent is 3 years older" 
+                       6 "Respondent is 2 years older" 
+                       7 "Respondent is 1 year older" 
+                       8 "Respondent and spouse/partner are same age" 
+                       9 "Respondent is 1 year younger" 
+                       10 "Respondent is 2 years younger" 
+                       11 "Respondent is 3 years younger" 
+                       12 "Respondent is 4 years younger" 
+                       13 "Respondent is 5 years younger" 
+                       14 "Respondent is 6 to 10 years younger" 
+                       15 "Respondent is 11 + years younger" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define chrflag   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define chrtime6  1 "No child under 19 years of age at home" 
+                       2 "All children under 5 years of age" 
+                       3 "All children between 5 and 12 years of age" 
+                       4 "All children 13 years of age or older" 
+                       5 "At least one child under 5 years, but not all children" 
+                       6 "Other" 96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define livarr08  1 "Under 25 years of age not living with parents" 
+                       2 "Under 25 years of age living with both parents" 
+                       3 "Under 25 years of age living with mother only" 
+                       4 "Under 25 years of age living with father only" 
+                       5 "25 years of age or older not living with parents" 
+                       6 "25 years of age or older living with both parents" 
+                       7 "25 years of age or older living with mother only" 
+                       8 "25 years of age or older living with father only" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define livarr12  1 "Alone" 2 "Spouse only" 
+                       3 "Spouse and single child < 25 years of age" 
+                       4 "Spouse and single child 25 years of age or older" 
+                       5 "Spouse and non-single child(ren)" 
+                       6 "Spouse and other" 
+                       7 "No spouse and single child < 25 years of age" 
+                       8 "No spouse and single child 25 years of age or older" 
+                       9 "No spouse and non-single child(ren)" 
+                       10 "Living with 2 parents" 11 "Living with 1 parent" 
+                       12 "Other living arrangement" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define marstat   1 "Married" 2 "Living common-law" 3 "Widowed" 
+                       4 "Separated" 5 "Divorced" 6 "Single, never married" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define multigen  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define senflag   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sexpr     0 "Respondent has no partner in the household" 
+                       1 "Respondent has a male partner in the household" 
+                       2 "Respondent has a female partner in the household" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define hom_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define hom_20    1 "Less than 1 month" 2 "1 month to less than 1 year" 
+                       3 "1 year and over" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define hom_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define hom_40    1 "Less than 1 month" 2 "1 month to less than 1 year" 
+                       3 "1 year and over" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10a   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10b   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10c   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10d   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10e   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10f   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10g   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10h   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10i   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10j   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10k   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10l   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10m   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10n   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10o   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10p   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10q   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ior_10r   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define isl_100   0 "None" 996 "Valid skip" 997 "Don't know" 
+                       998 "Refusal" 999 "Not stated" ;
+label define lanhsd    1 "English Only" 2 "French Only" 
+                       3 "Other language only" 4 "English and French equally" 
+                       5 "English and Other equally" 
+                       6 "French and Other equally" 
+                       7 "English, French and Other equally" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define lan_01    1 "English only" 2 "French only" 
+                       3 "Both English and French" 
+                       4 "Neither English nor French" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define live_loc  1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define live_dwe  1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define lrg_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define live_nei  1 "Less than 6 months" 
+                       2 "6 months to less than 1 year" 
+                       3 "1 year to less than 3 years" 
+                       4 "3 years to less than 5 years" 
+                       5 "5 years to less than 10 years" 
+                       6 "10 years and over" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define lwc_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define map_110c  1 "Working at a paid job or business" 
+                       2 "Looking for paid work" 3 "Going to school" 
+                       4 "Caring for children" 5 "Household work" 6 "Retired" 
+                       7 "Maternity/paternity or parental leave" 
+                       8 "Long term illness" 9 "Other" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define map_130   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mar_110   1 "Working at a paid job or business" 
+                       2 "Looking for paid work" 3 "Going to school" 
+                       4 "Caring for children" 5 "Household work" 6 "Retired" 
+                       7 "Maternity/paternity or parental leave" 
+                       8 "Long term illness" 
+                       9 "Volunteering or care-giving other than for children" 
+                       10 "Other - Specify" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define mar_133   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mar_134   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mar_135   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define med_110   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define med_120   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define med_130   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mra_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mra_20    1 "Male" 2 "Female" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mre_05    1 "Ended" 2 "Still going on" 3 "Not sure" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define mre_10    1 "1 week or less" 2 "1 to 4 weeks" 3 "1 to 6 months" 
+                       4 "6 to 12 months" 5 "More than one year" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define mre_20a   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mre_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define mre_50    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ncp_10    1 "Very likely" 2 "Somewhat likely" 
+                       3 "Somewhat unlikely" 4 "Not at all likely" 
+                       5 "Just moved into the area" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define ncp_20    1 "Very likely" 2 "Somewhat likely" 
+                       3 "Somewhat unlikely" 4 "Not at all likely" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define nsc_10    1 "Higher" 2 "About the same" 3 "Lower" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define nsc_20    1 "Increased" 2 "Decreased" 3 "About the same" 
+                       4 "Just moved/has not lived in neighbourhood long enough" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define nsc_30    1 "Very safe" 2 "Reasonably safe" 3 "Somewhat unsafe" 
+                       4 "Very unsafe" 5 "Do not walk alone" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define nsc_50    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define dwelown   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pcc_145   1 "A great deal of confidence" 2 "Some confidence" 
+                       3 "Not very much confidence" 4 "No confidence at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define pcc_160   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define peo_110   0 "Never" 95 "Less than once a month" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define peo_130   0 "Never" 95 "Less than once a month" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define peo_180   0 "Never" 95 "Less than once a month" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define pfc_110   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_120   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_130   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_140   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_160   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_180   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_185   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190a  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190b  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190c  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190d  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190e  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pfc_190f  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define vismin    1 "Visible minority" 2 "Not a visible minority" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_110   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_120   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_130   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_140   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_150   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define plp_160   1 "Good job" 2 "Average job" 3 "Poor job" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define pts_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define pts_30    1 "Very worried" 2 "Somewhat worried" 
+                       3 "Not at all worried about your safety from crime" 
+                       4 "Never use public transportation (after dark)" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define pts_40    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define qin_10    1 "Most of the people in your neighbourhood" 
+                       2 "Many of the people (in your neighbourhood)" 
+                       3 "A few of the people (in your neighbourhood)" 
+                       4 "None of the people in your neighbourhood" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define qin_20    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ree_02    1 "At least once a week" 2 "At least once a month" 
+                       3 "At least 3 times a year" 4 "Once or twice a year" 
+                       5 "Not at all" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ree_03    1 "At least once a day" 2 "At least once a week" 
+                       3 "At least once a month" 4 "At least 3 times a year" 
+                       5 "Once or twice a year" 6 "Not at all" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define rew_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rlr_110   1 "Very important" 2 "Somewhat important" 
+                       3 "Not very important" 4 "Not at all important" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define rns_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_100   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_130   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_140   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_150   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_160   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_170   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_180   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_190   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_200   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_220   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_230   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_250   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_260   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_270   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_280   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_290   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_300   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_310   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_350   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define rns_360   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ros_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ros_20    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define ros_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sbl_100   1 "Very strong" 2 "Somewhat strong" 3 "Somewhat weak" 
+                       4 "Very weak" 5 "No opinion" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define scl_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sdq_110   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_120   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_140   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_150   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_160   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_170   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sdq_180   1 "A big problem" 2 "A moderate problem" 
+                       3 "A small problem" 4 "Not a problem at all" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define sfc_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sfc_20    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sfc_30    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sfc_40    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sfc_50    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define sfc_60    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20a   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20b   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20c   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20d   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20e   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20f   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20g   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define shs_20h   1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define slm_01    0 "Very unsatisfied" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 
+                       6 "6" 7 "7" 8 "8" 9 "9" 10 "Very satisfied" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define sps_10    1 "Very satisfied" 2 "Satisfied" 
+                       3 "Neither satisfied nor dissatisfied" 
+                       4 "Dissatisfied" 5 "Very dissatisfied" 6 "No opinion" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define spy_10    1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define srh_110   1 "Excellent" 2 "Very good" 3 "Good" 4 "Fair" 5 "Poor" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define srh_115   1 "Excellent" 2 "Very good" 3 "Good" 4 "Fair" 5 "Poor" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define stalking  1 "Yes" 2 "No" 6 "Valid skip" 7 "Don't know" 
+                       8 "Refusal" 9 "Not stated" ;
+label define tip_10    1 "1 - Cannot be trusted at all" 2 "2" 3 "3" 4 "4" 
+                       5 "5 - Can be trusted a lot" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define tip_15    1 "1 - Cannot be trusted at all" 2 "2" 3 "3" 4 "4" 
+                       5 "5 - Can be trusted a lot" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define tip_20    1 "1- Cannot be trusted at all" 2 "2" 3 "3" 4 "4" 
+                       5 "5 - Can be trusted a lot" 
+                       6 "Does not go to school nor works" 96 "Valid skip" 
+                       97 "Don't know" 98 "Refusal" 99 "Not stated" ;
+label define tip_25    1 "1 - Cannot be trusted at all" 2 "2" 3 "3" 4 "4" 
+                       5 "5 - Can be trusted a lot" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define visminpr  1 "Visible minority" 2 "Not a visible minority" 
+                       6 "Valid skip" 7 "Don't know" 8 "Refusal" 
+                       9 "Not stated" ;
+label define totvic    0 "Not victimized" 1 "Victimized one time" 
+                       2 "Victimized two times" 
+                       3 "Victimized three or more times" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define naic12cy  0 "None" 
+                       1 "Agriculture, forestry, fishing and hunting" 
+                       2 "Mining, quarrying and oil and gas extraction" 
+                       3 "Utilities" 4 "Construction" 5 "Manufacturing" 
+                       6 "Wholesale trade" 7 "Retail trade" 
+                       8 "Transportation and warehousing" 
+                       9 "Information and cultural industries" 
+                       10 "Finance and insurance" 
+                       11 "Real estate and rental and leasing" 
+                       12 "Professional, scientific and technical services" 
+                       13 "Management of companies and enterprises" 
+                       14 "Administrative and support, waste management, & remediat." 
+                       15 "Educational services" 
+                       16 "Health care and social assistance" 
+                       17 "Arts, entertainment and recreation" 
+                       18 "Accommodation and food services" 
+                       19 "Other services (except public administration)" 
+                       20 "Public administration" 95 "Uncodable" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define noc1110y  1 "Management occupations" 
+                       2 "Business, finance, and administration occupations" 
+                       3 "Natural and applied sciences and related occupations" 
+                       4 "Health occupations" 
+                       5 "Occupations in education, law and social, community..." 
+                       6 "Occupations in art, culture, recreation and sport" 
+                       7 "Sales and service occupations" 
+                       8 "Trades, transport and equipment operators and related oc..." 
+                       9 "Natural resources, agriculture and related production oc..." 
+                       10 "Occupations in manufacturing and utilities" 
+                       95 "Uncodable" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define noc1140y  1 "Senior management occupation" 
+                       2 "Specialized middle management occupations" 
+                       3 "Middle management occupations in retail and wholesale tr..." 
+                       4 "Middle management occupations in trades, transportation..." 
+                       5 "Professional occupations in business and finance" 
+                       6 "Administrative and financial supervisors and administrative" 
+                       7 "Finance, insurance and related business administrative..." 
+                       8 "Office support occupations" 
+                       9 "Distribution, tracking and scheduling co-ordination occu..." 
+                       10 "Professional occupations in natural and applied sciences" 
+                       11 "Technical occupations related to natural and applied sci..." 
+                       12 "Professional occupations in nursing" 
+                       13 "Professional occupations in health (except nursing)" 
+                       14 "Technical occupations in health" 
+                       15 "Assisting occupations in support of health services" 
+                       16 "Professional occupations in education services" 
+                       17 "Professional occupations in law and social, community..." 
+                       18 "Paraprofessional occupations in legal, social, community..." 
+                       19 "Occupations in front-line public protection services" 
+                       20 "Care providers and educational, legal and public protect..." 
+                       21 "Professional occupations in art and culture" 
+                       22 "Technical occupations in art, culture, recreation and sport" 
+                       23 "Retail sales supervisors and specialized sales occupations" 
+                       24 "Service supervisors and specialized service occupations" 
+                       25 "Sales representatives and salespersons - wholesale..." 
+                       26 "Service representatives and other customer and personal..." 
+                       27 "Sales support occupations" 
+                       28 "Service support and other service occupations, n.e.c" 
+                       29 "Industrial, electrical and construction trades" 
+                       30 "Maintenance and equipment operation trades" 
+                       31 "Other installers, repairers and servicers and material..." 
+                       32 "Transport and heavy equipment operation and related maint.." 
+                       33 "Trades helpers, construction labourers and related occup..." 
+                       34 "Supervisors and technical occupations in natural resourc..." 
+                       35 "Workers in natural resources, agriculture and related pr..." 
+                       36 "Harvesting, landscaping and natural resources labourers" 
+                       37 "Processing, manufacturing and utilities supervisors..." 
+                       38 "Processing and manufacturing machine operators and relat..." 
+                       39 "Assemblers in manufacturing" 
+                       40 "Labourers in processing, manufacturing and utilities" 
+                       95 "Uncodable" 96 "Valid skip" 97 "Don't know" 
+                       98 "Refusal" 99 "Not stated" ;
+label define wet_110   96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define whw_120   999.6 "Valid skip" 999.7 "Don't know" 999.8 "Refusal" 
+                       999.9 "Not stated" ;
+label define whw_230   1 "A regular daytime schedule or shift" 
+                       2 "A regular evening shift" 3 "A regular night shift" 
+                       4 "A rotating shift (one that changes periodically)" 
+                       5 "A split shift (one consisting of 2+ distinct periods)" 
+                       6 "A compressed work week" 7 "On call or casual" 
+                       8 "An irregular schedule" 9 "Other - Specify" 
+                       96 "Valid skip" 97 "Don't know" 98 "Refusal" 
+                       99 "Not stated" ;
+label define wly_150   
+                       1 "Regular employee (no contractual or anticipated termination" 
+                       2 "Seasonal employee (employment on this job is intermittent ac" 
+                       3 "Term employee (term of employment has a set termination date" 
+                       4 "Casual or on-call employee" 6 "Valid skip" 
+                       7 "Don't know" 8 "Refusal" 9 "Not stated" ;
+label define wtbs_001  99999.9996 "Valid skip" 99999.9997 "Don't know" 
+                       99999.9998 "Refusal" 99999.9999 "Not stated" ;
+
+
+#delimit cr
+
+*******************************************************************
+infile using X
+* Replace 'X' with the name of the dictionary file. 
+*
+* The contents of the dictionary are given at the end of this file.
+* Put the dictionary into a separate file (by editing this file).
+* Then specify here the name of the dictionary file.
+*******************************************************************
+* The md, min and max specifications were translated 
+* into the following "REPLACE...IF" statements:
+
+replace acs1020 = . if (acs1020 >= 6 & acs1020 <= 9)
+replace adp2030 = . if (adp2030 >= 6 & adp2030 <= 9)
+replace agearrc = . if (agearrc >= 96 & agearrc <= 99)
+replace ageldimm = . if (ageldimm >= 96 & ageldimm <= 99)
+replace agelswkc = . if (agelswkc >= 96 & agelswkc <= 99)
+replace brthmacc = . if (brthmacc >= 6 & brthmacc <= 9)
+replace cextalk = . if (cextalk >= 6 & cextalk <= 9)
+replace cex_040c = . if (cex_040c >= 96 & cex_040c <= 99)
+replace cex_065c = . if (cex_065c >= 96 & cex_065c <= 99)
+replace chh0014c = . if (chh0014c >= 6 & chh0014c <= 9)
+replace chrhsdc = . if (chrhsdc >= 6 & chrhsdc <= 9)
+replace cwp_5080 = . if (cwp_5080 >= 6 & cwp_5080 <= 9)
+replace dnmov5yr = . if (dnmov5yr >= 96 & dnmov5yr <= 99)
+replace dur_115c = . if (dur_115c >= 6 & dur_115c <= 9)
+replace eop_200c = . if (eop_200c >= 96 & eop_200c <= 99)
+replace hhincg1 = . if (hhincg1 >= 96 & hhincg1 <= 99)
+replace hhsizec = . if (hhsizec >= 96 & hhsizec <= 99)
+replace incg1 = . if (incg1 >= 96 & incg1 <= 99)
+replace mrarel = . if (mrarel >= 6 & mrarel <= 9)
+replace msi = . if (msi >= 96 & msi <= 99)
+replace numvactc = . if (numvactc >= 96 & numvactc <= 99)
+replace parnumc = . if (parnumc >= 6 & parnumc <= 9)
+replace prtypec = . if (prtypec >= 6 & prtypec <= 9)
+replace religflg = . if (religflg >= 96 & religflg <= 99)
+replace relprflg = . if (relprflg >= 6 & relprflg <= 9)
+replace rns370_c = . if (rns370_c >= 96 & rns370_c <= 99)
+replace wti_120c = . if (wti_120c >= 96 & wti_120c <= 99)
+replace yrlndimm = . if (yrlndimm >= 96 & yrlndimm <= 99)
+replace adp_010 = . if (adp_010 >= 6 & adp_010 <= 9)
+replace ahe_10 = . if (ahe_10 >= 6 & ahe_10 <= 9)
+replace aip_01 = . if (aip_01 >= 6 & aip_01 <= 9)
+replace amb_01 = . if (amb_01 >= 6 & amb_01 <= 9)
+replace bpr_02c = . if (bpr_02c >= 96 & bpr_02c <= 99)
+replace bpr_16 = . if (bpr_16 >= 6 & bpr_16 <= 9)
+replace brthcan = . if (brthcan >= 6 & brthcan <= 9)
+replace brthfcan = . if (brthfcan >= 6 & brthfcan <= 9)
+replace brthmcan = . if (brthmcan >= 6 & brthmcan <= 9)
+replace brthpcan = . if (brthpcan >= 6 & brthpcan <= 9)
+replace brthregc = . if (brthregc >= 96 & brthregc <= 99)
+replace ctzship = . if (ctzship >= 6 & ctzship <= 9)
+replace yrarri = . if (yrarri >= 96 & yrarri <= 99)
+replace recid = . if (recid >= 99996 & recid <= 99999)
+replace wght_hsd = . if (wght_hsd >= 99999.9996 & wght_hsd <= 99999.9999)
+replace wght_per = . if (wght_per >= 99999.9996 & wght_per <= 99999.9999)
+replace cbu_100 = . if (cbu_100 >= 96 & cbu_100 <= 99)
+replace cbu_110 = . if (cbu_110 >= 6 & cbu_110 <= 9)
+replace cbu_120 = . if (cbu_120 >= 6 & cbu_120 <= 9)
+replace cbu_125 = . if (cbu_125 >= 6 & cbu_125 <= 9)
+replace cbu_130 = . if (cbu_130 >= 6 & cbu_130 <= 9)
+replace cbu_140 = . if (cbu_140 >= 6 & cbu_140 <= 9)
+replace cbu_150 = . if (cbu_150 >= 6 & cbu_150 <= 9)
+replace cexabu = . if (cexabu >= 6 & cexabu <= 9)
+replace cexphys = . if (cexphys >= 6 & cexphys <= 9)
+replace cexsex = . if (cexsex >= 6 & cexsex <= 9)
+replace cex_070a = . if (cex_070a >= 6 & cex_070a <= 9)
+replace cex_070b = . if (cex_070b >= 6 & cex_070b <= 9)
+replace cex_070c = . if (cex_070c >= 6 & cex_070c <= 9)
+replace cex_080 = . if (cex_080 >= 6 & cex_080 <= 9)
+replace cip_10 = . if (cip_10 >= 6 & cip_10 <= 9)
+replace mshsd = . if (mshsd >= 996 & mshsd <= 999)
+replace msper = . if (msper >= 996 & msper <= 999)
+replace msvic = . if (msvic >= 996 & msvic <= 999)
+replace cwp_110 = . if (cwp_110 >= 6 & cwp_110 <= 9)
+replace cwp_120 = . if (cwp_120 >= 6 & cwp_120 <= 9)
+replace cwp_140 = . if (cwp_140 >= 6 & cwp_140 <= 9)
+replace cwp_160 = . if (cwp_160 >= 6 & cwp_160 <= 9)
+replace cwp_170 = . if (cwp_170 >= 6 & cwp_170 <= 9)
+replace agegr10 = . if (agegr10 >= 96 & agegr10 <= 99)
+replace luc_rst = . if (luc_rst >= 6 & luc_rst <= 9)
+replace region = . if (region >= 96 & region <= 99)
+replace sex = . if (sex >= 6 & sex <= 9)
+replace discrim = . if (discrim >= 6 & discrim <= 9)
+replace dis_10 = . if (dis_10 >= 6 & dis_10 <= 9)
+replace dis_15 = . if (dis_15 >= 6 & dis_15 <= 9)
+replace dis_20 = . if (dis_20 >= 6 & dis_20 <= 9)
+replace dis_25 = . if (dis_25 >= 6 & dis_25 <= 9)
+replace dis_30 = . if (dis_30 >= 6 & dis_30 <= 9)
+replace dis_35 = . if (dis_35 >= 6 & dis_35 <= 9)
+replace dis_40 = . if (dis_40 >= 6 & dis_40 <= 9)
+replace dis_45 = . if (dis_45 >= 6 & dis_45 <= 9)
+replace dis_50 = . if (dis_50 >= 6 & dis_50 <= 9)
+replace dis_55 = . if (dis_55 >= 6 & dis_55 <= 9)
+replace dis_rind = . if (dis_rind >= 6 & dis_rind <= 9)
+replace dwelc = . if (dwelc >= 6 & dwelc <= 9)
+replace drp_110 = . if (drp_110 >= 96 & drp_110 <= 99)
+replace drp_120 = . if (drp_120 >= 96 & drp_120 <= 99)
+replace drr_110 = . if (drr_110 >= 96 & drr_110 <= 99)
+replace drr_120 = . if (drr_120 >= 96 & drr_120 <= 99)
+replace dcog_fl = . if (dcog_fl >= 6 & dcog_fl <= 9)
+replace ddis_fl = . if (ddis_fl >= 6 & ddis_fl <= 9)
+replace dhea_fl = . if (dhea_fl >= 6 & dhea_fl <= 9)
+replace dmen_fl = . if (dmen_fl >= 6 & dmen_fl <= 9)
+replace dphy_fl = . if (dphy_fl >= 6 & dphy_fl <= 9)
+replace dunk_fl = . if (dunk_fl >= 6 & dunk_fl <= 9)
+replace dvis_fl = . if (dvis_fl >= 6 & dvis_fl <= 9)
+replace dis_pl = . if (dis_pl >= 6 & dis_pl <= 9)
+replace dts_20 = . if (dts_20 >= 6 & dts_20 <= 9)
+replace dts_25 = . if (dts_25 >= 6 & dts_25 <= 9)
+replace dts_30 = . if (dts_30 >= 6 & dts_30 <= 9)
+replace dts_35 = . if (dts_35 >= 6 & dts_35 <= 9)
+replace dts_60 = . if (dts_60 >= 6 & dts_60 <= 9)
+replace dts_65 = . if (dts_65 >= 6 & dts_65 <= 9)
+replace dup_100 = . if (dup_100 >= 6 & dup_100 <= 9)
+replace dup_105 = . if (dup_105 >= 6 & dup_105 <= 9)
+replace dur_100 = . if (dur_100 >= 6 & dur_100 <= 9)
+replace dur_105 = . if (dur_105 >= 6 & dur_105 <= 9)
+replace dur_110 = . if (dur_110 >= 6 & dur_110 <= 9)
+replace ehg3_01 = . if (ehg3_01 >= 96 & ehg3_01 <= 99)
+replace ehg3_02 = . if (ehg3_02 >= 6 & ehg3_02 <= 9)
+replace ehg3_03 = . if (ehg3_03 >= 6 & ehg3_03 <= 9)
+replace ehg3_04 = . if (ehg3_04 >= 6 & ehg3_04 <= 9)
+replace ehg3_05 = . if (ehg3_05 >= 6 & ehg3_05 <= 9)
+replace eduf10 = . if (eduf10 >= 96 & eduf10 <= 99)
+replace eduf5 = . if (eduf5 >= 6 & eduf5 <= 9)
+replace edum10 = . if (edum10 >= 96 & edum10 <= 99)
+replace edum5 = . if (edum5 >= 6 & edum5 <= 9)
+replace edupr10 = . if (edupr10 >= 96 & edupr10 <= 99)
+replace edupr5 = . if (edupr5 >= 6 & edupr5 <= 9)
+replace eor_01a = . if (eor_01a >= 6 & eor_01a <= 9)
+replace eor_01b = . if (eor_01b >= 6 & eor_01b <= 9)
+replace eor_01c = . if (eor_01c >= 6 & eor_01c <= 9)
+replace eor_02 = . if (eor_02 >= 6 & eor_02 <= 9)
+replace esc1_01 = . if (esc1_01 >= 6 & esc1_01 <= 9)
+replace agechryg = . if (agechryg >= 96 & agechryg <= 99)
+replace ageprg10 = . if (ageprg10 >= 96 & ageprg10 <= 99)
+replace aprgrdif = . if (aprgrdif >= 96 & aprgrdif <= 99)
+replace chrflag = . if (chrflag >= 6 & chrflag <= 9)
+replace chrtime6 = . if (chrtime6 >= 96 & chrtime6 <= 99)
+replace livarr08 = . if (livarr08 >= 96 & livarr08 <= 99)
+replace livarr12 = . if (livarr12 >= 96 & livarr12 <= 99)
+replace marstat = . if (marstat >= 96 & marstat <= 99)
+replace multigen = . if (multigen >= 6 & multigen <= 9)
+replace senflag = . if (senflag >= 6 & senflag <= 9)
+replace sexpr = . if (sexpr >= 6 & sexpr <= 9)
+replace hom_10 = . if (hom_10 >= 6 & hom_10 <= 9)
+replace hom_20 = . if (hom_20 >= 6 & hom_20 <= 9)
+replace hom_30 = . if (hom_30 >= 6 & hom_30 <= 9)
+replace hom_40 = . if (hom_40 >= 6 & hom_40 <= 9)
+replace ior_10a = . if (ior_10a >= 6 & ior_10a <= 9)
+replace ior_10b = . if (ior_10b >= 6 & ior_10b <= 9)
+replace ior_10c = . if (ior_10c >= 6 & ior_10c <= 9)
+replace ior_10d = . if (ior_10d >= 6 & ior_10d <= 9)
+replace ior_10e = . if (ior_10e >= 6 & ior_10e <= 9)
+replace ior_10f = . if (ior_10f >= 6 & ior_10f <= 9)
+replace ior_10g = . if (ior_10g >= 6 & ior_10g <= 9)
+replace ior_10h = . if (ior_10h >= 6 & ior_10h <= 9)
+replace ior_10i = . if (ior_10i >= 6 & ior_10i <= 9)
+replace ior_10j = . if (ior_10j >= 6 & ior_10j <= 9)
+replace ior_10k = . if (ior_10k >= 6 & ior_10k <= 9)
+replace ior_10l = . if (ior_10l >= 6 & ior_10l <= 9)
+replace ior_10m = . if (ior_10m >= 6 & ior_10m <= 9)
+replace ior_10n = . if (ior_10n >= 6 & ior_10n <= 9)
+replace ior_10o = . if (ior_10o >= 6 & ior_10o <= 9)
+replace ior_10p = . if (ior_10p >= 6 & ior_10p <= 9)
+replace ior_10q = . if (ior_10q >= 6 & ior_10q <= 9)
+replace ior_10r = . if (ior_10r >= 6 & ior_10r <= 9)
+replace isl_100 = . if (isl_100 >= 996 & isl_100 <= 999)
+replace lanhsd = . if (lanhsd >= 96 & lanhsd <= 99)
+replace lan_01 = . if (lan_01 >= 6 & lan_01 <= 9)
+replace live_loc = . if (live_loc >= 96 & live_loc <= 99)
+replace live_dwe = . if (live_dwe >= 96 & live_dwe <= 99)
+replace lrg_10 = . if (lrg_10 >= 6 & lrg_10 <= 9)
+replace live_nei = . if (live_nei >= 96 & live_nei <= 99)
+replace lwc_10 = . if (lwc_10 >= 6 & lwc_10 <= 9)
+replace map_110c = . if (map_110c >= 96 & map_110c <= 99)
+replace map_130 = . if (map_130 >= 6 & map_130 <= 9)
+replace mar_110 = . if (mar_110 >= 96 & mar_110 <= 99)
+replace mar_133 = . if (mar_133 >= 6 & mar_133 <= 9)
+replace mar_134 = . if (mar_134 >= 6 & mar_134 <= 9)
+replace mar_135 = . if (mar_135 >= 6 & mar_135 <= 9)
+replace med_110 = . if (med_110 >= 6 & med_110 <= 9)
+replace med_120 = . if (med_120 >= 6 & med_120 <= 9)
+replace med_130 = . if (med_130 >= 6 & med_130 <= 9)
+replace mra_10 = . if (mra_10 >= 6 & mra_10 <= 9)
+replace mra_20 = . if (mra_20 >= 6 & mra_20 <= 9)
+replace mre_05 = . if (mre_05 >= 6 & mre_05 <= 9)
+replace mre_10 = . if (mre_10 >= 6 & mre_10 <= 9)
+replace mre_20a = . if (mre_20a >= 6 & mre_20a <= 9)
+replace mre_30 = . if (mre_30 >= 6 & mre_30 <= 9)
+replace mre_50 = . if (mre_50 >= 6 & mre_50 <= 9)
+replace ncp_10 = . if (ncp_10 >= 6 & ncp_10 <= 9)
+replace ncp_20 = . if (ncp_20 >= 6 & ncp_20 <= 9)
+replace nsc_10 = . if (nsc_10 >= 6 & nsc_10 <= 9)
+replace nsc_20 = . if (nsc_20 >= 6 & nsc_20 <= 9)
+replace nsc_30 = . if (nsc_30 >= 6 & nsc_30 <= 9)
+replace nsc_50 = . if (nsc_50 >= 6 & nsc_50 <= 9)
+replace dwelown = . if (dwelown >= 6 & dwelown <= 9)
+replace pcc_145 = . if (pcc_145 >= 6 & pcc_145 <= 9)
+replace pcc_160 = . if (pcc_160 >= 6 & pcc_160 <= 9)
+replace peo_110 = . if (peo_110 >= 96 & peo_110 <= 99)
+replace peo_130 = . if (peo_130 >= 96 & peo_130 <= 99)
+replace peo_180 = . if (peo_180 >= 96 & peo_180 <= 99)
+replace pfc_110 = . if (pfc_110 >= 6 & pfc_110 <= 9)
+replace pfc_120 = . if (pfc_120 >= 6 & pfc_120 <= 9)
+replace pfc_130 = . if (pfc_130 >= 6 & pfc_130 <= 9)
+replace pfc_140 = . if (pfc_140 >= 6 & pfc_140 <= 9)
+replace pfc_160 = . if (pfc_160 >= 6 & pfc_160 <= 9)
+replace pfc_180 = . if (pfc_180 >= 6 & pfc_180 <= 9)
+replace pfc_185 = . if (pfc_185 >= 6 & pfc_185 <= 9)
+replace pfc_190a = . if (pfc_190a >= 6 & pfc_190a <= 9)
+replace pfc_190b = . if (pfc_190b >= 6 & pfc_190b <= 9)
+replace pfc_190c = . if (pfc_190c >= 6 & pfc_190c <= 9)
+replace pfc_190d = . if (pfc_190d >= 6 & pfc_190d <= 9)
+replace pfc_190e = . if (pfc_190e >= 6 & pfc_190e <= 9)
+replace pfc_190f = . if (pfc_190f >= 6 & pfc_190f <= 9)
+replace vismin = . if (vismin >= 6 & vismin <= 9)
+replace plp_110 = . if (plp_110 >= 6 & plp_110 <= 9)
+replace plp_120 = . if (plp_120 >= 6 & plp_120 <= 9)
+replace plp_130 = . if (plp_130 >= 6 & plp_130 <= 9)
+replace plp_140 = . if (plp_140 >= 6 & plp_140 <= 9)
+replace plp_150 = . if (plp_150 >= 6 & plp_150 <= 9)
+replace plp_160 = . if (plp_160 >= 6 & plp_160 <= 9)
+replace pts_10 = . if (pts_10 >= 6 & pts_10 <= 9)
+replace pts_30 = . if (pts_30 >= 6 & pts_30 <= 9)
+replace pts_40 = . if (pts_40 >= 6 & pts_40 <= 9)
+replace qin_10 = . if (qin_10 >= 6 & qin_10 <= 9)
+replace qin_20 = . if (qin_20 >= 6 & qin_20 <= 9)
+replace ree_02 = . if (ree_02 >= 6 & ree_02 <= 9)
+replace ree_03 = . if (ree_03 >= 96 & ree_03 <= 99)
+replace rew_10 = . if (rew_10 >= 6 & rew_10 <= 9)
+replace rlr_110 = . if (rlr_110 >= 6 & rlr_110 <= 9)
+replace rns_10 = . if (rns_10 >= 6 & rns_10 <= 9)
+replace rns_100 = . if (rns_100 >= 6 & rns_100 <= 9)
+replace rns_130 = . if (rns_130 >= 6 & rns_130 <= 9)
+replace rns_140 = . if (rns_140 >= 6 & rns_140 <= 9)
+replace rns_150 = . if (rns_150 >= 6 & rns_150 <= 9)
+replace rns_160 = . if (rns_160 >= 6 & rns_160 <= 9)
+replace rns_170 = . if (rns_170 >= 6 & rns_170 <= 9)
+replace rns_180 = . if (rns_180 >= 6 & rns_180 <= 9)
+replace rns_190 = . if (rns_190 >= 6 & rns_190 <= 9)
+replace rns_200 = . if (rns_200 >= 6 & rns_200 <= 9)
+replace rns_220 = . if (rns_220 >= 6 & rns_220 <= 9)
+replace rns_230 = . if (rns_230 >= 6 & rns_230 <= 9)
+replace rns_250 = . if (rns_250 >= 6 & rns_250 <= 9)
+replace rns_260 = . if (rns_260 >= 6 & rns_260 <= 9)
+replace rns_270 = . if (rns_270 >= 6 & rns_270 <= 9)
+replace rns_280 = . if (rns_280 >= 6 & rns_280 <= 9)
+replace rns_290 = . if (rns_290 >= 6 & rns_290 <= 9)
+replace rns_300 = . if (rns_300 >= 6 & rns_300 <= 9)
+replace rns_310 = . if (rns_310 >= 6 & rns_310 <= 9)
+replace rns_350 = . if (rns_350 >= 6 & rns_350 <= 9)
+replace rns_360 = . if (rns_360 >= 6 & rns_360 <= 9)
+replace ros_10 = . if (ros_10 >= 6 & ros_10 <= 9)
+replace ros_20 = . if (ros_20 >= 6 & ros_20 <= 9)
+replace ros_30 = . if (ros_30 >= 6 & ros_30 <= 9)
+replace sbl_100 = . if (sbl_100 >= 6 & sbl_100 <= 9)
+replace scl_10 = . if (scl_10 >= 6 & scl_10 <= 9)
+replace sdq_110 = . if (sdq_110 >= 6 & sdq_110 <= 9)
+replace sdq_120 = . if (sdq_120 >= 6 & sdq_120 <= 9)
+replace sdq_140 = . if (sdq_140 >= 6 & sdq_140 <= 9)
+replace sdq_150 = . if (sdq_150 >= 6 & sdq_150 <= 9)
+replace sdq_160 = . if (sdq_160 >= 6 & sdq_160 <= 9)
+replace sdq_170 = . if (sdq_170 >= 6 & sdq_170 <= 9)
+replace sdq_180 = . if (sdq_180 >= 6 & sdq_180 <= 9)
+replace sfc_10 = . if (sfc_10 >= 6 & sfc_10 <= 9)
+replace sfc_20 = . if (sfc_20 >= 6 & sfc_20 <= 9)
+replace sfc_30 = . if (sfc_30 >= 6 & sfc_30 <= 9)
+replace sfc_40 = . if (sfc_40 >= 6 & sfc_40 <= 9)
+replace sfc_50 = . if (sfc_50 >= 6 & sfc_50 <= 9)
+replace sfc_60 = . if (sfc_60 >= 6 & sfc_60 <= 9)
+replace shs_10 = . if (shs_10 >= 6 & shs_10 <= 9)
+replace shs_20a = . if (shs_20a >= 6 & shs_20a <= 9)
+replace shs_20b = . if (shs_20b >= 6 & shs_20b <= 9)
+replace shs_20c = . if (shs_20c >= 6 & shs_20c <= 9)
+replace shs_20d = . if (shs_20d >= 6 & shs_20d <= 9)
+replace shs_20e = . if (shs_20e >= 6 & shs_20e <= 9)
+replace shs_20f = . if (shs_20f >= 6 & shs_20f <= 9)
+replace shs_20g = . if (shs_20g >= 6 & shs_20g <= 9)
+replace shs_20h = . if (shs_20h >= 6 & shs_20h <= 9)
+replace slm_01 = . if (slm_01 >= 96 & slm_01 <= 99)
+replace sps_10 = . if (sps_10 >= 96 & sps_10 <= 99)
+replace spy_10 = . if (spy_10 >= 6 & spy_10 <= 9)
+replace srh_110 = . if (srh_110 >= 6 & srh_110 <= 9)
+replace srh_115 = . if (srh_115 >= 6 & srh_115 <= 9)
+replace stalking = . if (stalking >= 6 & stalking <= 9)
+replace tip_10 = . if (tip_10 >= 6 & tip_10 <= 9)
+replace tip_15 = . if (tip_15 >= 6 & tip_15 <= 9)
+replace tip_20 = . if (tip_20 >= 96 & tip_20 <= 99)
+replace tip_25 = . if (tip_25 >= 6 & tip_25 <= 9)
+replace visminpr = . if (visminpr >= 6 & visminpr <= 9)
+replace totvic = . if (totvic >= 6 & totvic <= 9)
+replace naic12cy = . if (naic12cy >= 96 & naic12cy <= 99)
+replace noc1110y = . if (noc1110y >= 96 & noc1110y <= 99)
+replace noc1140y = . if (noc1140y >= 96 & noc1140y <= 99)
+replace wet_110 = . if (wet_110 >= 96 & wet_110 <= 99)
+replace whw_120 = . if (whw_120 >= 999.6 & whw_120 <= 999.9)
+replace whw_230 = . if (whw_230 >= 96 & whw_230 <= 99)
+replace wly_150 = . if (wly_150 >= 6 & wly_150 <= 9)
+replace wtbs_001 = . if (wtbs_001 >= 99999.9996 & wtbs_001 <= 99999.9999)
+replace wtbs_002 = . if (wtbs_002 >= 99999.9996 & wtbs_002 <= 99999.9999)
+replace wtbs_003 = . if (wtbs_003 >= 99999.9996 & wtbs_003 <= 99999.9999)
+replace wtbs_004 = . if (wtbs_004 >= 99999.9996 & wtbs_004 <= 99999.9999)
+replace wtbs_005 = . if (wtbs_005 >= 99999.9996 & wtbs_005 <= 99999.9999)
+replace wtbs_006 = . if (wtbs_006 >= 99999.9996 & wtbs_006 <= 99999.9999)
+replace wtbs_007 = . if (wtbs_007 >= 99999.9996 & wtbs_007 <= 99999.9999)
+replace wtbs_008 = . if (wtbs_008 >= 99999.9996 & wtbs_008 <= 99999.9999)
+replace wtbs_009 = . if (wtbs_009 >= 99999.9996 & wtbs_009 <= 99999.9999)
+replace wtbs_010 = . if (wtbs_010 >= 99999.9996 & wtbs_010 <= 99999.9999)
+replace wtbs_011 = . if (wtbs_011 >= 99999.9996 & wtbs_011 <= 99999.9999)
+replace wtbs_012 = . if (wtbs_012 >= 99999.9996 & wtbs_012 <= 99999.9999)
+replace wtbs_013 = . if (wtbs_013 >= 99999.9996 & wtbs_013 <= 99999.9999)
+replace wtbs_014 = . if (wtbs_014 >= 99999.9996 & wtbs_014 <= 99999.9999)
+replace wtbs_015 = . if (wtbs_015 >= 99999.9996 & wtbs_015 <= 99999.9999)
+replace wtbs_016 = . if (wtbs_016 >= 99999.9996 & wtbs_016 <= 99999.9999)
+replace wtbs_017 = . if (wtbs_017 >= 99999.9996 & wtbs_017 <= 99999.9999)
+replace wtbs_018 = . if (wtbs_018 >= 99999.9996 & wtbs_018 <= 99999.9999)
+replace wtbs_019 = . if (wtbs_019 >= 99999.9996 & wtbs_019 <= 99999.9999)
+replace wtbs_020 = . if (wtbs_020 >= 99999.9996 & wtbs_020 <= 99999.9999)
+replace wtbs_021 = . if (wtbs_021 >= 99999.9996 & wtbs_021 <= 99999.9999)
+replace wtbs_022 = . if (wtbs_022 >= 99999.9996 & wtbs_022 <= 99999.9999)
+replace wtbs_023 = . if (wtbs_023 >= 99999.9996 & wtbs_023 <= 99999.9999)
+replace wtbs_024 = . if (wtbs_024 >= 99999.9996 & wtbs_024 <= 99999.9999)
+replace wtbs_025 = . if (wtbs_025 >= 99999.9996 & wtbs_025 <= 99999.9999)
+replace wtbs_026 = . if (wtbs_026 >= 99999.9996 & wtbs_026 <= 99999.9999)
+replace wtbs_027 = . if (wtbs_027 >= 99999.9996 & wtbs_027 <= 99999.9999)
+replace wtbs_028 = . if (wtbs_028 >= 99999.9996 & wtbs_028 <= 99999.9999)
+replace wtbs_029 = . if (wtbs_029 >= 99999.9996 & wtbs_029 <= 99999.9999)
+replace wtbs_030 = . if (wtbs_030 >= 99999.9996 & wtbs_030 <= 99999.9999)
+replace wtbs_031 = . if (wtbs_031 >= 99999.9996 & wtbs_031 <= 99999.9999)
+replace wtbs_032 = . if (wtbs_032 >= 99999.9996 & wtbs_032 <= 99999.9999)
+replace wtbs_033 = . if (wtbs_033 >= 99999.9996 & wtbs_033 <= 99999.9999)
+replace wtbs_034 = . if (wtbs_034 >= 99999.9996 & wtbs_034 <= 99999.9999)
+replace wtbs_035 = . if (wtbs_035 >= 99999.9996 & wtbs_035 <= 99999.9999)
+replace wtbs_036 = . if (wtbs_036 >= 99999.9996 & wtbs_036 <= 99999.9999)
+replace wtbs_037 = . if (wtbs_037 >= 99999.9996 & wtbs_037 <= 99999.9999)
+replace wtbs_038 = . if (wtbs_038 >= 99999.9996 & wtbs_038 <= 99999.9999)
+replace wtbs_039 = . if (wtbs_039 >= 99999.9996 & wtbs_039 <= 99999.9999)
+replace wtbs_040 = . if (wtbs_040 >= 99999.9996 & wtbs_040 <= 99999.9999)
+replace wtbs_041 = . if (wtbs_041 >= 99999.9996 & wtbs_041 <= 99999.9999)
+replace wtbs_042 = . if (wtbs_042 >= 99999.9996 & wtbs_042 <= 99999.9999)
+replace wtbs_043 = . if (wtbs_043 >= 99999.9996 & wtbs_043 <= 99999.9999)
+replace wtbs_044 = . if (wtbs_044 >= 99999.9996 & wtbs_044 <= 99999.9999)
+replace wtbs_045 = . if (wtbs_045 >= 99999.9996 & wtbs_045 <= 99999.9999)
+replace wtbs_046 = . if (wtbs_046 >= 99999.9996 & wtbs_046 <= 99999.9999)
+replace wtbs_047 = . if (wtbs_047 >= 99999.9996 & wtbs_047 <= 99999.9999)
+replace wtbs_048 = . if (wtbs_048 >= 99999.9996 & wtbs_048 <= 99999.9999)
+replace wtbs_049 = . if (wtbs_049 >= 99999.9996 & wtbs_049 <= 99999.9999)
+replace wtbs_050 = . if (wtbs_050 >= 99999.9996 & wtbs_050 <= 99999.9999)
+replace wtbs_051 = . if (wtbs_051 >= 99999.9996 & wtbs_051 <= 99999.9999)
+replace wtbs_052 = . if (wtbs_052 >= 99999.9996 & wtbs_052 <= 99999.9999)
+replace wtbs_053 = . if (wtbs_053 >= 99999.9996 & wtbs_053 <= 99999.9999)
+replace wtbs_054 = . if (wtbs_054 >= 99999.9996 & wtbs_054 <= 99999.9999)
+replace wtbs_055 = . if (wtbs_055 >= 99999.9996 & wtbs_055 <= 99999.9999)
+replace wtbs_056 = . if (wtbs_056 >= 99999.9996 & wtbs_056 <= 99999.9999)
+replace wtbs_057 = . if (wtbs_057 >= 99999.9996 & wtbs_057 <= 99999.9999)
+replace wtbs_058 = . if (wtbs_058 >= 99999.9996 & wtbs_058 <= 99999.9999)
+replace wtbs_059 = . if (wtbs_059 >= 99999.9996 & wtbs_059 <= 99999.9999)
+replace wtbs_060 = . if (wtbs_060 >= 99999.9996 & wtbs_060 <= 99999.9999)
+replace wtbs_061 = . if (wtbs_061 >= 99999.9996 & wtbs_061 <= 99999.9999)
+replace wtbs_062 = . if (wtbs_062 >= 99999.9996 & wtbs_062 <= 99999.9999)
+replace wtbs_063 = . if (wtbs_063 >= 99999.9996 & wtbs_063 <= 99999.9999)
+replace wtbs_064 = . if (wtbs_064 >= 99999.9996 & wtbs_064 <= 99999.9999)
+replace wtbs_065 = . if (wtbs_065 >= 99999.9996 & wtbs_065 <= 99999.9999)
+replace wtbs_066 = . if (wtbs_066 >= 99999.9996 & wtbs_066 <= 99999.9999)
+replace wtbs_067 = . if (wtbs_067 >= 99999.9996 & wtbs_067 <= 99999.9999)
+replace wtbs_068 = . if (wtbs_068 >= 99999.9996 & wtbs_068 <= 99999.9999)
+replace wtbs_069 = . if (wtbs_069 >= 99999.9996 & wtbs_069 <= 99999.9999)
+replace wtbs_070 = . if (wtbs_070 >= 99999.9996 & wtbs_070 <= 99999.9999)
+replace wtbs_071 = . if (wtbs_071 >= 99999.9996 & wtbs_071 <= 99999.9999)
+replace wtbs_072 = . if (wtbs_072 >= 99999.9996 & wtbs_072 <= 99999.9999)
+replace wtbs_073 = . if (wtbs_073 >= 99999.9996 & wtbs_073 <= 99999.9999)
+replace wtbs_074 = . if (wtbs_074 >= 99999.9996 & wtbs_074 <= 99999.9999)
+replace wtbs_075 = . if (wtbs_075 >= 99999.9996 & wtbs_075 <= 99999.9999)
+replace wtbs_076 = . if (wtbs_076 >= 99999.9996 & wtbs_076 <= 99999.9999)
+replace wtbs_077 = . if (wtbs_077 >= 99999.9996 & wtbs_077 <= 99999.9999)
+replace wtbs_078 = . if (wtbs_078 >= 99999.9996 & wtbs_078 <= 99999.9999)
+replace wtbs_079 = . if (wtbs_079 >= 99999.9996 & wtbs_079 <= 99999.9999)
+replace wtbs_080 = . if (wtbs_080 >= 99999.9996 & wtbs_080 <= 99999.9999)
+replace wtbs_081 = . if (wtbs_081 >= 99999.9996 & wtbs_081 <= 99999.9999)
+replace wtbs_082 = . if (wtbs_082 >= 99999.9996 & wtbs_082 <= 99999.9999)
+replace wtbs_083 = . if (wtbs_083 >= 99999.9996 & wtbs_083 <= 99999.9999)
+replace wtbs_084 = . if (wtbs_084 >= 99999.9996 & wtbs_084 <= 99999.9999)
+replace wtbs_085 = . if (wtbs_085 >= 99999.9996 & wtbs_085 <= 99999.9999)
+replace wtbs_086 = . if (wtbs_086 >= 99999.9996 & wtbs_086 <= 99999.9999)
+replace wtbs_087 = . if (wtbs_087 >= 99999.9996 & wtbs_087 <= 99999.9999)
+replace wtbs_088 = . if (wtbs_088 >= 99999.9996 & wtbs_088 <= 99999.9999)
+replace wtbs_089 = . if (wtbs_089 >= 99999.9996 & wtbs_089 <= 99999.9999)
+replace wtbs_090 = . if (wtbs_090 >= 99999.9996 & wtbs_090 <= 99999.9999)
+replace wtbs_091 = . if (wtbs_091 >= 99999.9996 & wtbs_091 <= 99999.9999)
+replace wtbs_092 = . if (wtbs_092 >= 99999.9996 & wtbs_092 <= 99999.9999)
+replace wtbs_093 = . if (wtbs_093 >= 99999.9996 & wtbs_093 <= 99999.9999)
+replace wtbs_094 = . if (wtbs_094 >= 99999.9996 & wtbs_094 <= 99999.9999)
+replace wtbs_095 = . if (wtbs_095 >= 99999.9996 & wtbs_095 <= 99999.9999)
+replace wtbs_096 = . if (wtbs_096 >= 99999.9996 & wtbs_096 <= 99999.9999)
+replace wtbs_097 = . if (wtbs_097 >= 99999.9996 & wtbs_097 <= 99999.9999)
+replace wtbs_098 = . if (wtbs_098 >= 99999.9996 & wtbs_098 <= 99999.9999)
+replace wtbs_099 = . if (wtbs_099 >= 99999.9996 & wtbs_099 <= 99999.9999)
+replace wtbs_100 = . if (wtbs_100 >= 99999.9996 & wtbs_100 <= 99999.9999)
+replace wtbs_101 = . if (wtbs_101 >= 99999.9996 & wtbs_101 <= 99999.9999)
+replace wtbs_102 = . if (wtbs_102 >= 99999.9996 & wtbs_102 <= 99999.9999)
+replace wtbs_103 = . if (wtbs_103 >= 99999.9996 & wtbs_103 <= 99999.9999)
+replace wtbs_104 = . if (wtbs_104 >= 99999.9996 & wtbs_104 <= 99999.9999)
+replace wtbs_105 = . if (wtbs_105 >= 99999.9996 & wtbs_105 <= 99999.9999)
+replace wtbs_106 = . if (wtbs_106 >= 99999.9996 & wtbs_106 <= 99999.9999)
+replace wtbs_107 = . if (wtbs_107 >= 99999.9996 & wtbs_107 <= 99999.9999)
+replace wtbs_108 = . if (wtbs_108 >= 99999.9996 & wtbs_108 <= 99999.9999)
+replace wtbs_109 = . if (wtbs_109 >= 99999.9996 & wtbs_109 <= 99999.9999)
+replace wtbs_110 = . if (wtbs_110 >= 99999.9996 & wtbs_110 <= 99999.9999)
+replace wtbs_111 = . if (wtbs_111 >= 99999.9996 & wtbs_111 <= 99999.9999)
+replace wtbs_112 = . if (wtbs_112 >= 99999.9996 & wtbs_112 <= 99999.9999)
+replace wtbs_113 = . if (wtbs_113 >= 99999.9996 & wtbs_113 <= 99999.9999)
+replace wtbs_114 = . if (wtbs_114 >= 99999.9996 & wtbs_114 <= 99999.9999)
+replace wtbs_115 = . if (wtbs_115 >= 99999.9996 & wtbs_115 <= 99999.9999)
+replace wtbs_116 = . if (wtbs_116 >= 99999.9996 & wtbs_116 <= 99999.9999)
+replace wtbs_117 = . if (wtbs_117 >= 99999.9996 & wtbs_117 <= 99999.9999)
+replace wtbs_118 = . if (wtbs_118 >= 99999.9996 & wtbs_118 <= 99999.9999)
+replace wtbs_119 = . if (wtbs_119 >= 99999.9996 & wtbs_119 <= 99999.9999)
+replace wtbs_120 = . if (wtbs_120 >= 99999.9996 & wtbs_120 <= 99999.9999)
+replace wtbs_121 = . if (wtbs_121 >= 99999.9996 & wtbs_121 <= 99999.9999)
+replace wtbs_122 = . if (wtbs_122 >= 99999.9996 & wtbs_122 <= 99999.9999)
+replace wtbs_123 = . if (wtbs_123 >= 99999.9996 & wtbs_123 <= 99999.9999)
+replace wtbs_124 = . if (wtbs_124 >= 99999.9996 & wtbs_124 <= 99999.9999)
+replace wtbs_125 = . if (wtbs_125 >= 99999.9996 & wtbs_125 <= 99999.9999)
+replace wtbs_126 = . if (wtbs_126 >= 99999.9996 & wtbs_126 <= 99999.9999)
+replace wtbs_127 = . if (wtbs_127 >= 99999.9996 & wtbs_127 <= 99999.9999)
+replace wtbs_128 = . if (wtbs_128 >= 99999.9996 & wtbs_128 <= 99999.9999)
+replace wtbs_129 = . if (wtbs_129 >= 99999.9996 & wtbs_129 <= 99999.9999)
+replace wtbs_130 = . if (wtbs_130 >= 99999.9996 & wtbs_130 <= 99999.9999)
+replace wtbs_131 = . if (wtbs_131 >= 99999.9996 & wtbs_131 <= 99999.9999)
+replace wtbs_132 = . if (wtbs_132 >= 99999.9996 & wtbs_132 <= 99999.9999)
+replace wtbs_133 = . if (wtbs_133 >= 99999.9996 & wtbs_133 <= 99999.9999)
+replace wtbs_134 = . if (wtbs_134 >= 99999.9996 & wtbs_134 <= 99999.9999)
+replace wtbs_135 = . if (wtbs_135 >= 99999.9996 & wtbs_135 <= 99999.9999)
+replace wtbs_136 = . if (wtbs_136 >= 99999.9996 & wtbs_136 <= 99999.9999)
+replace wtbs_137 = . if (wtbs_137 >= 99999.9996 & wtbs_137 <= 99999.9999)
+replace wtbs_138 = . if (wtbs_138 >= 99999.9996 & wtbs_138 <= 99999.9999)
+replace wtbs_139 = . if (wtbs_139 >= 99999.9996 & wtbs_139 <= 99999.9999)
+replace wtbs_140 = . if (wtbs_140 >= 99999.9996 & wtbs_140 <= 99999.9999)
+replace wtbs_141 = . if (wtbs_141 >= 99999.9996 & wtbs_141 <= 99999.9999)
+replace wtbs_142 = . if (wtbs_142 >= 99999.9996 & wtbs_142 <= 99999.9999)
+replace wtbs_143 = . if (wtbs_143 >= 99999.9996 & wtbs_143 <= 99999.9999)
+replace wtbs_144 = . if (wtbs_144 >= 99999.9996 & wtbs_144 <= 99999.9999)
+replace wtbs_145 = . if (wtbs_145 >= 99999.9996 & wtbs_145 <= 99999.9999)
+replace wtbs_146 = . if (wtbs_146 >= 99999.9996 & wtbs_146 <= 99999.9999)
+replace wtbs_147 = . if (wtbs_147 >= 99999.9996 & wtbs_147 <= 99999.9999)
+replace wtbs_148 = . if (wtbs_148 >= 99999.9996 & wtbs_148 <= 99999.9999)
+replace wtbs_149 = . if (wtbs_149 >= 99999.9996 & wtbs_149 <= 99999.9999)
+replace wtbs_150 = . if (wtbs_150 >= 99999.9996 & wtbs_150 <= 99999.9999)
+replace wtbs_151 = . if (wtbs_151 >= 99999.9996 & wtbs_151 <= 99999.9999)
+replace wtbs_152 = . if (wtbs_152 >= 99999.9996 & wtbs_152 <= 99999.9999)
+replace wtbs_153 = . if (wtbs_153 >= 99999.9996 & wtbs_153 <= 99999.9999)
+replace wtbs_154 = . if (wtbs_154 >= 99999.9996 & wtbs_154 <= 99999.9999)
+replace wtbs_155 = . if (wtbs_155 >= 99999.9996 & wtbs_155 <= 99999.9999)
+replace wtbs_156 = . if (wtbs_156 >= 99999.9996 & wtbs_156 <= 99999.9999)
+replace wtbs_157 = . if (wtbs_157 >= 99999.9996 & wtbs_157 <= 99999.9999)
+replace wtbs_158 = . if (wtbs_158 >= 99999.9996 & wtbs_158 <= 99999.9999)
+replace wtbs_159 = . if (wtbs_159 >= 99999.9996 & wtbs_159 <= 99999.9999)
+replace wtbs_160 = . if (wtbs_160 >= 99999.9996 & wtbs_160 <= 99999.9999)
+replace wtbs_161 = . if (wtbs_161 >= 99999.9996 & wtbs_161 <= 99999.9999)
+replace wtbs_162 = . if (wtbs_162 >= 99999.9996 & wtbs_162 <= 99999.9999)
+replace wtbs_163 = . if (wtbs_163 >= 99999.9996 & wtbs_163 <= 99999.9999)
+replace wtbs_164 = . if (wtbs_164 >= 99999.9996 & wtbs_164 <= 99999.9999)
+replace wtbs_165 = . if (wtbs_165 >= 99999.9996 & wtbs_165 <= 99999.9999)
+replace wtbs_166 = . if (wtbs_166 >= 99999.9996 & wtbs_166 <= 99999.9999)
+replace wtbs_167 = . if (wtbs_167 >= 99999.9996 & wtbs_167 <= 99999.9999)
+replace wtbs_168 = . if (wtbs_168 >= 99999.9996 & wtbs_168 <= 99999.9999)
+replace wtbs_169 = . if (wtbs_169 >= 99999.9996 & wtbs_169 <= 99999.9999)
+replace wtbs_170 = . if (wtbs_170 >= 99999.9996 & wtbs_170 <= 99999.9999)
+replace wtbs_171 = . if (wtbs_171 >= 99999.9996 & wtbs_171 <= 99999.9999)
+replace wtbs_172 = . if (wtbs_172 >= 99999.9996 & wtbs_172 <= 99999.9999)
+replace wtbs_173 = . if (wtbs_173 >= 99999.9996 & wtbs_173 <= 99999.9999)
+replace wtbs_174 = . if (wtbs_174 >= 99999.9996 & wtbs_174 <= 99999.9999)
+replace wtbs_175 = . if (wtbs_175 >= 99999.9996 & wtbs_175 <= 99999.9999)
+replace wtbs_176 = . if (wtbs_176 >= 99999.9996 & wtbs_176 <= 99999.9999)
+replace wtbs_177 = . if (wtbs_177 >= 99999.9996 & wtbs_177 <= 99999.9999)
+replace wtbs_178 = . if (wtbs_178 >= 99999.9996 & wtbs_178 <= 99999.9999)
+replace wtbs_179 = . if (wtbs_179 >= 99999.9996 & wtbs_179 <= 99999.9999)
+replace wtbs_180 = . if (wtbs_180 >= 99999.9996 & wtbs_180 <= 99999.9999)
+replace wtbs_181 = . if (wtbs_181 >= 99999.9996 & wtbs_181 <= 99999.9999)
+replace wtbs_182 = . if (wtbs_182 >= 99999.9996 & wtbs_182 <= 99999.9999)
+replace wtbs_183 = . if (wtbs_183 >= 99999.9996 & wtbs_183 <= 99999.9999)
+replace wtbs_184 = . if (wtbs_184 >= 99999.9996 & wtbs_184 <= 99999.9999)
+replace wtbs_185 = . if (wtbs_185 >= 99999.9996 & wtbs_185 <= 99999.9999)
+replace wtbs_186 = . if (wtbs_186 >= 99999.9996 & wtbs_186 <= 99999.9999)
+replace wtbs_187 = . if (wtbs_187 >= 99999.9996 & wtbs_187 <= 99999.9999)
+replace wtbs_188 = . if (wtbs_188 >= 99999.9996 & wtbs_188 <= 99999.9999)
+replace wtbs_189 = . if (wtbs_189 >= 99999.9996 & wtbs_189 <= 99999.9999)
+replace wtbs_190 = . if (wtbs_190 >= 99999.9996 & wtbs_190 <= 99999.9999)
+replace wtbs_191 = . if (wtbs_191 >= 99999.9996 & wtbs_191 <= 99999.9999)
+replace wtbs_192 = . if (wtbs_192 >= 99999.9996 & wtbs_192 <= 99999.9999)
+replace wtbs_193 = . if (wtbs_193 >= 99999.9996 & wtbs_193 <= 99999.9999)
+replace wtbs_194 = . if (wtbs_194 >= 99999.9996 & wtbs_194 <= 99999.9999)
+replace wtbs_195 = . if (wtbs_195 >= 99999.9996 & wtbs_195 <= 99999.9999)
+replace wtbs_196 = . if (wtbs_196 >= 99999.9996 & wtbs_196 <= 99999.9999)
+replace wtbs_197 = . if (wtbs_197 >= 99999.9996 & wtbs_197 <= 99999.9999)
+replace wtbs_198 = . if (wtbs_198 >= 99999.9996 & wtbs_198 <= 99999.9999)
+replace wtbs_199 = . if (wtbs_199 >= 99999.9996 & wtbs_199 <= 99999.9999)
+replace wtbs_200 = . if (wtbs_200 >= 99999.9996 & wtbs_200 <= 99999.9999)
+replace wtbs_201 = . if (wtbs_201 >= 99999.9996 & wtbs_201 <= 99999.9999)
+replace wtbs_202 = . if (wtbs_202 >= 99999.9996 & wtbs_202 <= 99999.9999)
+replace wtbs_203 = . if (wtbs_203 >= 99999.9996 & wtbs_203 <= 99999.9999)
+replace wtbs_204 = . if (wtbs_204 >= 99999.9996 & wtbs_204 <= 99999.9999)
+replace wtbs_205 = . if (wtbs_205 >= 99999.9996 & wtbs_205 <= 99999.9999)
+replace wtbs_206 = . if (wtbs_206 >= 99999.9996 & wtbs_206 <= 99999.9999)
+replace wtbs_207 = . if (wtbs_207 >= 99999.9996 & wtbs_207 <= 99999.9999)
+replace wtbs_208 = . if (wtbs_208 >= 99999.9996 & wtbs_208 <= 99999.9999)
+replace wtbs_209 = . if (wtbs_209 >= 99999.9996 & wtbs_209 <= 99999.9999)
+replace wtbs_210 = . if (wtbs_210 >= 99999.9996 & wtbs_210 <= 99999.9999)
+replace wtbs_211 = . if (wtbs_211 >= 99999.9996 & wtbs_211 <= 99999.9999)
+replace wtbs_212 = . if (wtbs_212 >= 99999.9996 & wtbs_212 <= 99999.9999)
+replace wtbs_213 = . if (wtbs_213 >= 99999.9996 & wtbs_213 <= 99999.9999)
+replace wtbs_214 = . if (wtbs_214 >= 99999.9996 & wtbs_214 <= 99999.9999)
+replace wtbs_215 = . if (wtbs_215 >= 99999.9996 & wtbs_215 <= 99999.9999)
+replace wtbs_216 = . if (wtbs_216 >= 99999.9996 & wtbs_216 <= 99999.9999)
+replace wtbs_217 = . if (wtbs_217 >= 99999.9996 & wtbs_217 <= 99999.9999)
+replace wtbs_218 = . if (wtbs_218 >= 99999.9996 & wtbs_218 <= 99999.9999)
+replace wtbs_219 = . if (wtbs_219 >= 99999.9996 & wtbs_219 <= 99999.9999)
+replace wtbs_220 = . if (wtbs_220 >= 99999.9996 & wtbs_220 <= 99999.9999)
+replace wtbs_221 = . if (wtbs_221 >= 99999.9996 & wtbs_221 <= 99999.9999)
+replace wtbs_222 = . if (wtbs_222 >= 99999.9996 & wtbs_222 <= 99999.9999)
+replace wtbs_223 = . if (wtbs_223 >= 99999.9996 & wtbs_223 <= 99999.9999)
+replace wtbs_224 = . if (wtbs_224 >= 99999.9996 & wtbs_224 <= 99999.9999)
+replace wtbs_225 = . if (wtbs_225 >= 99999.9996 & wtbs_225 <= 99999.9999)
+replace wtbs_226 = . if (wtbs_226 >= 99999.9996 & wtbs_226 <= 99999.9999)
+replace wtbs_227 = . if (wtbs_227 >= 99999.9996 & wtbs_227 <= 99999.9999)
+replace wtbs_228 = . if (wtbs_228 >= 99999.9996 & wtbs_228 <= 99999.9999)
+replace wtbs_229 = . if (wtbs_229 >= 99999.9996 & wtbs_229 <= 99999.9999)
+replace wtbs_230 = . if (wtbs_230 >= 99999.9996 & wtbs_230 <= 99999.9999)
+replace wtbs_231 = . if (wtbs_231 >= 99999.9996 & wtbs_231 <= 99999.9999)
+replace wtbs_232 = . if (wtbs_232 >= 99999.9996 & wtbs_232 <= 99999.9999)
+replace wtbs_233 = . if (wtbs_233 >= 99999.9996 & wtbs_233 <= 99999.9999)
+replace wtbs_234 = . if (wtbs_234 >= 99999.9996 & wtbs_234 <= 99999.9999)
+replace wtbs_235 = . if (wtbs_235 >= 99999.9996 & wtbs_235 <= 99999.9999)
+replace wtbs_236 = . if (wtbs_236 >= 99999.9996 & wtbs_236 <= 99999.9999)
+replace wtbs_237 = . if (wtbs_237 >= 99999.9996 & wtbs_237 <= 99999.9999)
+replace wtbs_238 = . if (wtbs_238 >= 99999.9996 & wtbs_238 <= 99999.9999)
+replace wtbs_239 = . if (wtbs_239 >= 99999.9996 & wtbs_239 <= 99999.9999)
+replace wtbs_240 = . if (wtbs_240 >= 99999.9996 & wtbs_240 <= 99999.9999)
+replace wtbs_241 = . if (wtbs_241 >= 99999.9996 & wtbs_241 <= 99999.9999)
+replace wtbs_242 = . if (wtbs_242 >= 99999.9996 & wtbs_242 <= 99999.9999)
+replace wtbs_243 = . if (wtbs_243 >= 99999.9996 & wtbs_243 <= 99999.9999)
+replace wtbs_244 = . if (wtbs_244 >= 99999.9996 & wtbs_244 <= 99999.9999)
+replace wtbs_245 = . if (wtbs_245 >= 99999.9996 & wtbs_245 <= 99999.9999)
+replace wtbs_246 = . if (wtbs_246 >= 99999.9996 & wtbs_246 <= 99999.9999)
+replace wtbs_247 = . if (wtbs_247 >= 99999.9996 & wtbs_247 <= 99999.9999)
+replace wtbs_248 = . if (wtbs_248 >= 99999.9996 & wtbs_248 <= 99999.9999)
+replace wtbs_249 = . if (wtbs_249 >= 99999.9996 & wtbs_249 <= 99999.9999)
+replace wtbs_250 = . if (wtbs_250 >= 99999.9996 & wtbs_250 <= 99999.9999)
+replace wtbs_251 = . if (wtbs_251 >= 99999.9996 & wtbs_251 <= 99999.9999)
+replace wtbs_252 = . if (wtbs_252 >= 99999.9996 & wtbs_252 <= 99999.9999)
+replace wtbs_253 = . if (wtbs_253 >= 99999.9996 & wtbs_253 <= 99999.9999)
+replace wtbs_254 = . if (wtbs_254 >= 99999.9996 & wtbs_254 <= 99999.9999)
+replace wtbs_255 = . if (wtbs_255 >= 99999.9996 & wtbs_255 <= 99999.9999)
+replace wtbs_256 = . if (wtbs_256 >= 99999.9996 & wtbs_256 <= 99999.9999)
+replace wtbs_257 = . if (wtbs_257 >= 99999.9996 & wtbs_257 <= 99999.9999)
+replace wtbs_258 = . if (wtbs_258 >= 99999.9996 & wtbs_258 <= 99999.9999)
+replace wtbs_259 = . if (wtbs_259 >= 99999.9996 & wtbs_259 <= 99999.9999)
+replace wtbs_260 = . if (wtbs_260 >= 99999.9996 & wtbs_260 <= 99999.9999)
+replace wtbs_261 = . if (wtbs_261 >= 99999.9996 & wtbs_261 <= 99999.9999)
+replace wtbs_262 = . if (wtbs_262 >= 99999.9996 & wtbs_262 <= 99999.9999)
+replace wtbs_263 = . if (wtbs_263 >= 99999.9996 & wtbs_263 <= 99999.9999)
+replace wtbs_264 = . if (wtbs_264 >= 99999.9996 & wtbs_264 <= 99999.9999)
+replace wtbs_265 = . if (wtbs_265 >= 99999.9996 & wtbs_265 <= 99999.9999)
+replace wtbs_266 = . if (wtbs_266 >= 99999.9996 & wtbs_266 <= 99999.9999)
+replace wtbs_267 = . if (wtbs_267 >= 99999.9996 & wtbs_267 <= 99999.9999)
+replace wtbs_268 = . if (wtbs_268 >= 99999.9996 & wtbs_268 <= 99999.9999)
+replace wtbs_269 = . if (wtbs_269 >= 99999.9996 & wtbs_269 <= 99999.9999)
+replace wtbs_270 = . if (wtbs_270 >= 99999.9996 & wtbs_270 <= 99999.9999)
+replace wtbs_271 = . if (wtbs_271 >= 99999.9996 & wtbs_271 <= 99999.9999)
+replace wtbs_272 = . if (wtbs_272 >= 99999.9996 & wtbs_272 <= 99999.9999)
+replace wtbs_273 = . if (wtbs_273 >= 99999.9996 & wtbs_273 <= 99999.9999)
+replace wtbs_274 = . if (wtbs_274 >= 99999.9996 & wtbs_274 <= 99999.9999)
+replace wtbs_275 = . if (wtbs_275 >= 99999.9996 & wtbs_275 <= 99999.9999)
+replace wtbs_276 = . if (wtbs_276 >= 99999.9996 & wtbs_276 <= 99999.9999)
+replace wtbs_277 = . if (wtbs_277 >= 99999.9996 & wtbs_277 <= 99999.9999)
+replace wtbs_278 = . if (wtbs_278 >= 99999.9996 & wtbs_278 <= 99999.9999)
+replace wtbs_279 = . if (wtbs_279 >= 99999.9996 & wtbs_279 <= 99999.9999)
+replace wtbs_280 = . if (wtbs_280 >= 99999.9996 & wtbs_280 <= 99999.9999)
+replace wtbs_281 = . if (wtbs_281 >= 99999.9996 & wtbs_281 <= 99999.9999)
+replace wtbs_282 = . if (wtbs_282 >= 99999.9996 & wtbs_282 <= 99999.9999)
+replace wtbs_283 = . if (wtbs_283 >= 99999.9996 & wtbs_283 <= 99999.9999)
+replace wtbs_284 = . if (wtbs_284 >= 99999.9996 & wtbs_284 <= 99999.9999)
+replace wtbs_285 = . if (wtbs_285 >= 99999.9996 & wtbs_285 <= 99999.9999)
+replace wtbs_286 = . if (wtbs_286 >= 99999.9996 & wtbs_286 <= 99999.9999)
+replace wtbs_287 = . if (wtbs_287 >= 99999.9996 & wtbs_287 <= 99999.9999)
+replace wtbs_288 = . if (wtbs_288 >= 99999.9996 & wtbs_288 <= 99999.9999)
+replace wtbs_289 = . if (wtbs_289 >= 99999.9996 & wtbs_289 <= 99999.9999)
+replace wtbs_290 = . if (wtbs_290 >= 99999.9996 & wtbs_290 <= 99999.9999)
+replace wtbs_291 = . if (wtbs_291 >= 99999.9996 & wtbs_291 <= 99999.9999)
+replace wtbs_292 = . if (wtbs_292 >= 99999.9996 & wtbs_292 <= 99999.9999)
+replace wtbs_293 = . if (wtbs_293 >= 99999.9996 & wtbs_293 <= 99999.9999)
+replace wtbs_294 = . if (wtbs_294 >= 99999.9996 & wtbs_294 <= 99999.9999)
+replace wtbs_295 = . if (wtbs_295 >= 99999.9996 & wtbs_295 <= 99999.9999)
+replace wtbs_296 = . if (wtbs_296 >= 99999.9996 & wtbs_296 <= 99999.9999)
+replace wtbs_297 = . if (wtbs_297 >= 99999.9996 & wtbs_297 <= 99999.9999)
+replace wtbs_298 = . if (wtbs_298 >= 99999.9996 & wtbs_298 <= 99999.9999)
+replace wtbs_299 = . if (wtbs_299 >= 99999.9996 & wtbs_299 <= 99999.9999)
+replace wtbs_300 = . if (wtbs_300 >= 99999.9996 & wtbs_300 <= 99999.9999)
+replace wtbs_301 = . if (wtbs_301 >= 99999.9996 & wtbs_301 <= 99999.9999)
+replace wtbs_302 = . if (wtbs_302 >= 99999.9996 & wtbs_302 <= 99999.9999)
+replace wtbs_303 = . if (wtbs_303 >= 99999.9996 & wtbs_303 <= 99999.9999)
+replace wtbs_304 = . if (wtbs_304 >= 99999.9996 & wtbs_304 <= 99999.9999)
+replace wtbs_305 = . if (wtbs_305 >= 99999.9996 & wtbs_305 <= 99999.9999)
+replace wtbs_306 = . if (wtbs_306 >= 99999.9996 & wtbs_306 <= 99999.9999)
+replace wtbs_307 = . if (wtbs_307 >= 99999.9996 & wtbs_307 <= 99999.9999)
+replace wtbs_308 = . if (wtbs_308 >= 99999.9996 & wtbs_308 <= 99999.9999)
+replace wtbs_309 = . if (wtbs_309 >= 99999.9996 & wtbs_309 <= 99999.9999)
+replace wtbs_310 = . if (wtbs_310 >= 99999.9996 & wtbs_310 <= 99999.9999)
+replace wtbs_311 = . if (wtbs_311 >= 99999.9996 & wtbs_311 <= 99999.9999)
+replace wtbs_312 = . if (wtbs_312 >= 99999.9996 & wtbs_312 <= 99999.9999)
+replace wtbs_313 = . if (wtbs_313 >= 99999.9996 & wtbs_313 <= 99999.9999)
+replace wtbs_314 = . if (wtbs_314 >= 99999.9996 & wtbs_314 <= 99999.9999)
+replace wtbs_315 = . if (wtbs_315 >= 99999.9996 & wtbs_315 <= 99999.9999)
+replace wtbs_316 = . if (wtbs_316 >= 99999.9996 & wtbs_316 <= 99999.9999)
+replace wtbs_317 = . if (wtbs_317 >= 99999.9996 & wtbs_317 <= 99999.9999)
+replace wtbs_318 = . if (wtbs_318 >= 99999.9996 & wtbs_318 <= 99999.9999)
+replace wtbs_319 = . if (wtbs_319 >= 99999.9996 & wtbs_319 <= 99999.9999)
+replace wtbs_320 = . if (wtbs_320 >= 99999.9996 & wtbs_320 <= 99999.9999)
+replace wtbs_321 = . if (wtbs_321 >= 99999.9996 & wtbs_321 <= 99999.9999)
+replace wtbs_322 = . if (wtbs_322 >= 99999.9996 & wtbs_322 <= 99999.9999)
+replace wtbs_323 = . if (wtbs_323 >= 99999.9996 & wtbs_323 <= 99999.9999)
+replace wtbs_324 = . if (wtbs_324 >= 99999.9996 & wtbs_324 <= 99999.9999)
+replace wtbs_325 = . if (wtbs_325 >= 99999.9996 & wtbs_325 <= 99999.9999)
+replace wtbs_326 = . if (wtbs_326 >= 99999.9996 & wtbs_326 <= 99999.9999)
+replace wtbs_327 = . if (wtbs_327 >= 99999.9996 & wtbs_327 <= 99999.9999)
+replace wtbs_328 = . if (wtbs_328 >= 99999.9996 & wtbs_328 <= 99999.9999)
+replace wtbs_329 = . if (wtbs_329 >= 99999.9996 & wtbs_329 <= 99999.9999)
+replace wtbs_330 = . if (wtbs_330 >= 99999.9996 & wtbs_330 <= 99999.9999)
+replace wtbs_331 = . if (wtbs_331 >= 99999.9996 & wtbs_331 <= 99999.9999)
+replace wtbs_332 = . if (wtbs_332 >= 99999.9996 & wtbs_332 <= 99999.9999)
+replace wtbs_333 = . if (wtbs_333 >= 99999.9996 & wtbs_333 <= 99999.9999)
+replace wtbs_334 = . if (wtbs_334 >= 99999.9996 & wtbs_334 <= 99999.9999)
+replace wtbs_335 = . if (wtbs_335 >= 99999.9996 & wtbs_335 <= 99999.9999)
+replace wtbs_336 = . if (wtbs_336 >= 99999.9996 & wtbs_336 <= 99999.9999)
+replace wtbs_337 = . if (wtbs_337 >= 99999.9996 & wtbs_337 <= 99999.9999)
+replace wtbs_338 = . if (wtbs_338 >= 99999.9996 & wtbs_338 <= 99999.9999)
+replace wtbs_339 = . if (wtbs_339 >= 99999.9996 & wtbs_339 <= 99999.9999)
+replace wtbs_340 = . if (wtbs_340 >= 99999.9996 & wtbs_340 <= 99999.9999)
+replace wtbs_341 = . if (wtbs_341 >= 99999.9996 & wtbs_341 <= 99999.9999)
+replace wtbs_342 = . if (wtbs_342 >= 99999.9996 & wtbs_342 <= 99999.9999)
+replace wtbs_343 = . if (wtbs_343 >= 99999.9996 & wtbs_343 <= 99999.9999)
+replace wtbs_344 = . if (wtbs_344 >= 99999.9996 & wtbs_344 <= 99999.9999)
+replace wtbs_345 = . if (wtbs_345 >= 99999.9996 & wtbs_345 <= 99999.9999)
+replace wtbs_346 = . if (wtbs_346 >= 99999.9996 & wtbs_346 <= 99999.9999)
+replace wtbs_347 = . if (wtbs_347 >= 99999.9996 & wtbs_347 <= 99999.9999)
+replace wtbs_348 = . if (wtbs_348 >= 99999.9996 & wtbs_348 <= 99999.9999)
+replace wtbs_349 = . if (wtbs_349 >= 99999.9996 & wtbs_349 <= 99999.9999)
+replace wtbs_350 = . if (wtbs_350 >= 99999.9996 & wtbs_350 <= 99999.9999)
+replace wtbs_351 = . if (wtbs_351 >= 99999.9996 & wtbs_351 <= 99999.9999)
+replace wtbs_352 = . if (wtbs_352 >= 99999.9996 & wtbs_352 <= 99999.9999)
+replace wtbs_353 = . if (wtbs_353 >= 99999.9996 & wtbs_353 <= 99999.9999)
+replace wtbs_354 = . if (wtbs_354 >= 99999.9996 & wtbs_354 <= 99999.9999)
+replace wtbs_355 = . if (wtbs_355 >= 99999.9996 & wtbs_355 <= 99999.9999)
+replace wtbs_356 = . if (wtbs_356 >= 99999.9996 & wtbs_356 <= 99999.9999)
+replace wtbs_357 = . if (wtbs_357 >= 99999.9996 & wtbs_357 <= 99999.9999)
+replace wtbs_358 = . if (wtbs_358 >= 99999.9996 & wtbs_358 <= 99999.9999)
+replace wtbs_359 = . if (wtbs_359 >= 99999.9996 & wtbs_359 <= 99999.9999)
+replace wtbs_360 = . if (wtbs_360 >= 99999.9996 & wtbs_360 <= 99999.9999)
+replace wtbs_361 = . if (wtbs_361 >= 99999.9996 & wtbs_361 <= 99999.9999)
+replace wtbs_362 = . if (wtbs_362 >= 99999.9996 & wtbs_362 <= 99999.9999)
+replace wtbs_363 = . if (wtbs_363 >= 99999.9996 & wtbs_363 <= 99999.9999)
+replace wtbs_364 = . if (wtbs_364 >= 99999.9996 & wtbs_364 <= 99999.9999)
+replace wtbs_365 = . if (wtbs_365 >= 99999.9996 & wtbs_365 <= 99999.9999)
+replace wtbs_366 = . if (wtbs_366 >= 99999.9996 & wtbs_366 <= 99999.9999)
+replace wtbs_367 = . if (wtbs_367 >= 99999.9996 & wtbs_367 <= 99999.9999)
+replace wtbs_368 = . if (wtbs_368 >= 99999.9996 & wtbs_368 <= 99999.9999)
+replace wtbs_369 = . if (wtbs_369 >= 99999.9996 & wtbs_369 <= 99999.9999)
+replace wtbs_370 = . if (wtbs_370 >= 99999.9996 & wtbs_370 <= 99999.9999)
+replace wtbs_371 = . if (wtbs_371 >= 99999.9996 & wtbs_371 <= 99999.9999)
+replace wtbs_372 = . if (wtbs_372 >= 99999.9996 & wtbs_372 <= 99999.9999)
+replace wtbs_373 = . if (wtbs_373 >= 99999.9996 & wtbs_373 <= 99999.9999)
+replace wtbs_374 = . if (wtbs_374 >= 99999.9996 & wtbs_374 <= 99999.9999)
+replace wtbs_375 = . if (wtbs_375 >= 99999.9996 & wtbs_375 <= 99999.9999)
+replace wtbs_376 = . if (wtbs_376 >= 99999.9996 & wtbs_376 <= 99999.9999)
+replace wtbs_377 = . if (wtbs_377 >= 99999.9996 & wtbs_377 <= 99999.9999)
+replace wtbs_378 = . if (wtbs_378 >= 99999.9996 & wtbs_378 <= 99999.9999)
+replace wtbs_379 = . if (wtbs_379 >= 99999.9996 & wtbs_379 <= 99999.9999)
+replace wtbs_380 = . if (wtbs_380 >= 99999.9996 & wtbs_380 <= 99999.9999)
+replace wtbs_381 = . if (wtbs_381 >= 99999.9996 & wtbs_381 <= 99999.9999)
+replace wtbs_382 = . if (wtbs_382 >= 99999.9996 & wtbs_382 <= 99999.9999)
+replace wtbs_383 = . if (wtbs_383 >= 99999.9996 & wtbs_383 <= 99999.9999)
+replace wtbs_384 = . if (wtbs_384 >= 99999.9996 & wtbs_384 <= 99999.9999)
+replace wtbs_385 = . if (wtbs_385 >= 99999.9996 & wtbs_385 <= 99999.9999)
+replace wtbs_386 = . if (wtbs_386 >= 99999.9996 & wtbs_386 <= 99999.9999)
+replace wtbs_387 = . if (wtbs_387 >= 99999.9996 & wtbs_387 <= 99999.9999)
+replace wtbs_388 = . if (wtbs_388 >= 99999.9996 & wtbs_388 <= 99999.9999)
+replace wtbs_389 = . if (wtbs_389 >= 99999.9996 & wtbs_389 <= 99999.9999)
+replace wtbs_390 = . if (wtbs_390 >= 99999.9996 & wtbs_390 <= 99999.9999)
+replace wtbs_391 = . if (wtbs_391 >= 99999.9996 & wtbs_391 <= 99999.9999)
+replace wtbs_392 = . if (wtbs_392 >= 99999.9996 & wtbs_392 <= 99999.9999)
+replace wtbs_393 = . if (wtbs_393 >= 99999.9996 & wtbs_393 <= 99999.9999)
+replace wtbs_394 = . if (wtbs_394 >= 99999.9996 & wtbs_394 <= 99999.9999)
+replace wtbs_395 = . if (wtbs_395 >= 99999.9996 & wtbs_395 <= 99999.9999)
+replace wtbs_396 = . if (wtbs_396 >= 99999.9996 & wtbs_396 <= 99999.9999)
+replace wtbs_397 = . if (wtbs_397 >= 99999.9996 & wtbs_397 <= 99999.9999)
+replace wtbs_398 = . if (wtbs_398 >= 99999.9996 & wtbs_398 <= 99999.9999)
+replace wtbs_399 = . if (wtbs_399 >= 99999.9996 & wtbs_399 <= 99999.9999)
+replace wtbs_400 = . if (wtbs_400 >= 99999.9996 & wtbs_400 <= 99999.9999)
+replace wtbs_401 = . if (wtbs_401 >= 99999.9996 & wtbs_401 <= 99999.9999)
+replace wtbs_402 = . if (wtbs_402 >= 99999.9996 & wtbs_402 <= 99999.9999)
+replace wtbs_403 = . if (wtbs_403 >= 99999.9996 & wtbs_403 <= 99999.9999)
+replace wtbs_404 = . if (wtbs_404 >= 99999.9996 & wtbs_404 <= 99999.9999)
+replace wtbs_405 = . if (wtbs_405 >= 99999.9996 & wtbs_405 <= 99999.9999)
+replace wtbs_406 = . if (wtbs_406 >= 99999.9996 & wtbs_406 <= 99999.9999)
+replace wtbs_407 = . if (wtbs_407 >= 99999.9996 & wtbs_407 <= 99999.9999)
+replace wtbs_408 = . if (wtbs_408 >= 99999.9996 & wtbs_408 <= 99999.9999)
+replace wtbs_409 = . if (wtbs_409 >= 99999.9996 & wtbs_409 <= 99999.9999)
+replace wtbs_410 = . if (wtbs_410 >= 99999.9996 & wtbs_410 <= 99999.9999)
+replace wtbs_411 = . if (wtbs_411 >= 99999.9996 & wtbs_411 <= 99999.9999)
+replace wtbs_412 = . if (wtbs_412 >= 99999.9996 & wtbs_412 <= 99999.9999)
+replace wtbs_413 = . if (wtbs_413 >= 99999.9996 & wtbs_413 <= 99999.9999)
+replace wtbs_414 = . if (wtbs_414 >= 99999.9996 & wtbs_414 <= 99999.9999)
+replace wtbs_415 = . if (wtbs_415 >= 99999.9996 & wtbs_415 <= 99999.9999)
+replace wtbs_416 = . if (wtbs_416 >= 99999.9996 & wtbs_416 <= 99999.9999)
+replace wtbs_417 = . if (wtbs_417 >= 99999.9996 & wtbs_417 <= 99999.9999)
+replace wtbs_418 = . if (wtbs_418 >= 99999.9996 & wtbs_418 <= 99999.9999)
+replace wtbs_419 = . if (wtbs_419 >= 99999.9996 & wtbs_419 <= 99999.9999)
+replace wtbs_420 = . if (wtbs_420 >= 99999.9996 & wtbs_420 <= 99999.9999)
+replace wtbs_421 = . if (wtbs_421 >= 99999.9996 & wtbs_421 <= 99999.9999)
+replace wtbs_422 = . if (wtbs_422 >= 99999.9996 & wtbs_422 <= 99999.9999)
+replace wtbs_423 = . if (wtbs_423 >= 99999.9996 & wtbs_423 <= 99999.9999)
+replace wtbs_424 = . if (wtbs_424 >= 99999.9996 & wtbs_424 <= 99999.9999)
+replace wtbs_425 = . if (wtbs_425 >= 99999.9996 & wtbs_425 <= 99999.9999)
+replace wtbs_426 = . if (wtbs_426 >= 99999.9996 & wtbs_426 <= 99999.9999)
+replace wtbs_427 = . if (wtbs_427 >= 99999.9996 & wtbs_427 <= 99999.9999)
+replace wtbs_428 = . if (wtbs_428 >= 99999.9996 & wtbs_428 <= 99999.9999)
+replace wtbs_429 = . if (wtbs_429 >= 99999.9996 & wtbs_429 <= 99999.9999)
+replace wtbs_430 = . if (wtbs_430 >= 99999.9996 & wtbs_430 <= 99999.9999)
+replace wtbs_431 = . if (wtbs_431 >= 99999.9996 & wtbs_431 <= 99999.9999)
+replace wtbs_432 = . if (wtbs_432 >= 99999.9996 & wtbs_432 <= 99999.9999)
+replace wtbs_433 = . if (wtbs_433 >= 99999.9996 & wtbs_433 <= 99999.9999)
+replace wtbs_434 = . if (wtbs_434 >= 99999.9996 & wtbs_434 <= 99999.9999)
+replace wtbs_435 = . if (wtbs_435 >= 99999.9996 & wtbs_435 <= 99999.9999)
+replace wtbs_436 = . if (wtbs_436 >= 99999.9996 & wtbs_436 <= 99999.9999)
+replace wtbs_437 = . if (wtbs_437 >= 99999.9996 & wtbs_437 <= 99999.9999)
+replace wtbs_438 = . if (wtbs_438 >= 99999.9996 & wtbs_438 <= 99999.9999)
+replace wtbs_439 = . if (wtbs_439 >= 99999.9996 & wtbs_439 <= 99999.9999)
+replace wtbs_440 = . if (wtbs_440 >= 99999.9996 & wtbs_440 <= 99999.9999)
+replace wtbs_441 = . if (wtbs_441 >= 99999.9996 & wtbs_441 <= 99999.9999)
+replace wtbs_442 = . if (wtbs_442 >= 99999.9996 & wtbs_442 <= 99999.9999)
+replace wtbs_443 = . if (wtbs_443 >= 99999.9996 & wtbs_443 <= 99999.9999)
+replace wtbs_444 = . if (wtbs_444 >= 99999.9996 & wtbs_444 <= 99999.9999)
+replace wtbs_445 = . if (wtbs_445 >= 99999.9996 & wtbs_445 <= 99999.9999)
+replace wtbs_446 = . if (wtbs_446 >= 99999.9996 & wtbs_446 <= 99999.9999)
+replace wtbs_447 = . if (wtbs_447 >= 99999.9996 & wtbs_447 <= 99999.9999)
+replace wtbs_448 = . if (wtbs_448 >= 99999.9996 & wtbs_448 <= 99999.9999)
+replace wtbs_449 = . if (wtbs_449 >= 99999.9996 & wtbs_449 <= 99999.9999)
+replace wtbs_450 = . if (wtbs_450 >= 99999.9996 & wtbs_450 <= 99999.9999)
+replace wtbs_451 = . if (wtbs_451 >= 99999.9996 & wtbs_451 <= 99999.9999)
+replace wtbs_452 = . if (wtbs_452 >= 99999.9996 & wtbs_452 <= 99999.9999)
+replace wtbs_453 = . if (wtbs_453 >= 99999.9996 & wtbs_453 <= 99999.9999)
+replace wtbs_454 = . if (wtbs_454 >= 99999.9996 & wtbs_454 <= 99999.9999)
+replace wtbs_455 = . if (wtbs_455 >= 99999.9996 & wtbs_455 <= 99999.9999)
+replace wtbs_456 = . if (wtbs_456 >= 99999.9996 & wtbs_456 <= 99999.9999)
+replace wtbs_457 = . if (wtbs_457 >= 99999.9996 & wtbs_457 <= 99999.9999)
+replace wtbs_458 = . if (wtbs_458 >= 99999.9996 & wtbs_458 <= 99999.9999)
+replace wtbs_459 = . if (wtbs_459 >= 99999.9996 & wtbs_459 <= 99999.9999)
+replace wtbs_460 = . if (wtbs_460 >= 99999.9996 & wtbs_460 <= 99999.9999)
+replace wtbs_461 = . if (wtbs_461 >= 99999.9996 & wtbs_461 <= 99999.9999)
+replace wtbs_462 = . if (wtbs_462 >= 99999.9996 & wtbs_462 <= 99999.9999)
+replace wtbs_463 = . if (wtbs_463 >= 99999.9996 & wtbs_463 <= 99999.9999)
+replace wtbs_464 = . if (wtbs_464 >= 99999.9996 & wtbs_464 <= 99999.9999)
+replace wtbs_465 = . if (wtbs_465 >= 99999.9996 & wtbs_465 <= 99999.9999)
+replace wtbs_466 = . if (wtbs_466 >= 99999.9996 & wtbs_466 <= 99999.9999)
+replace wtbs_467 = . if (wtbs_467 >= 99999.9996 & wtbs_467 <= 99999.9999)
+replace wtbs_468 = . if (wtbs_468 >= 99999.9996 & wtbs_468 <= 99999.9999)
+replace wtbs_469 = . if (wtbs_469 >= 99999.9996 & wtbs_469 <= 99999.9999)
+replace wtbs_470 = . if (wtbs_470 >= 99999.9996 & wtbs_470 <= 99999.9999)
+replace wtbs_471 = . if (wtbs_471 >= 99999.9996 & wtbs_471 <= 99999.9999)
+replace wtbs_472 = . if (wtbs_472 >= 99999.9996 & wtbs_472 <= 99999.9999)
+replace wtbs_473 = . if (wtbs_473 >= 99999.9996 & wtbs_473 <= 99999.9999)
+replace wtbs_474 = . if (wtbs_474 >= 99999.9996 & wtbs_474 <= 99999.9999)
+replace wtbs_475 = . if (wtbs_475 >= 99999.9996 & wtbs_475 <= 99999.9999)
+replace wtbs_476 = . if (wtbs_476 >= 99999.9996 & wtbs_476 <= 99999.9999)
+replace wtbs_477 = . if (wtbs_477 >= 99999.9996 & wtbs_477 <= 99999.9999)
+replace wtbs_478 = . if (wtbs_478 >= 99999.9996 & wtbs_478 <= 99999.9999)
+replace wtbs_479 = . if (wtbs_479 >= 99999.9996 & wtbs_479 <= 99999.9999)
+replace wtbs_480 = . if (wtbs_480 >= 99999.9996 & wtbs_480 <= 99999.9999)
+replace wtbs_481 = . if (wtbs_481 >= 99999.9996 & wtbs_481 <= 99999.9999)
+replace wtbs_482 = . if (wtbs_482 >= 99999.9996 & wtbs_482 <= 99999.9999)
+replace wtbs_483 = . if (wtbs_483 >= 99999.9996 & wtbs_483 <= 99999.9999)
+replace wtbs_484 = . if (wtbs_484 >= 99999.9996 & wtbs_484 <= 99999.9999)
+replace wtbs_485 = . if (wtbs_485 >= 99999.9996 & wtbs_485 <= 99999.9999)
+replace wtbs_486 = . if (wtbs_486 >= 99999.9996 & wtbs_486 <= 99999.9999)
+replace wtbs_487 = . if (wtbs_487 >= 99999.9996 & wtbs_487 <= 99999.9999)
+replace wtbs_488 = . if (wtbs_488 >= 99999.9996 & wtbs_488 <= 99999.9999)
+replace wtbs_489 = . if (wtbs_489 >= 99999.9996 & wtbs_489 <= 99999.9999)
+replace wtbs_490 = . if (wtbs_490 >= 99999.9996 & wtbs_490 <= 99999.9999)
+replace wtbs_491 = . if (wtbs_491 >= 99999.9996 & wtbs_491 <= 99999.9999)
+replace wtbs_492 = . if (wtbs_492 >= 99999.9996 & wtbs_492 <= 99999.9999)
+replace wtbs_493 = . if (wtbs_493 >= 99999.9996 & wtbs_493 <= 99999.9999)
+replace wtbs_494 = . if (wtbs_494 >= 99999.9996 & wtbs_494 <= 99999.9999)
+replace wtbs_495 = . if (wtbs_495 >= 99999.9996 & wtbs_495 <= 99999.9999)
+replace wtbs_496 = . if (wtbs_496 >= 99999.9996 & wtbs_496 <= 99999.9999)
+replace wtbs_497 = . if (wtbs_497 >= 99999.9996 & wtbs_497 <= 99999.9999)
+replace wtbs_498 = . if (wtbs_498 >= 99999.9996 & wtbs_498 <= 99999.9999)
+replace wtbs_499 = . if (wtbs_499 >= 99999.9996 & wtbs_499 <= 99999.9999)
+replace wtbs_500 = . if (wtbs_500 >= 99999.9996 & wtbs_500 <= 99999.9999)
+
+
+dictionary using Y {
+*****************************************************************
+*  Replace 'Y' with the name of the data file.
+*  The default suffix is '.raw'.
+*
+*  Put this dictionary into a separate file (with the suffix .dct).
+*  (The first line of the dictionary file must contain the
+*  'dictionary' command.)
+*
+*  Then edit the name of that dictionary file into the 'do-file'
+*  portion of the STATA definitions.
+*******************************************************************
+*  Records per case:
+_lines(1)
+
+_line(1)
+
+_column(1)     long  CASEID             %5f    ""
+_column(7)     int   acs1020  :acs1020  %1f    "Abuse by a child, relative, friend or caregiver."
+_column(9)     int   adp2030  :adp2030  %1f    "Dating - Experienced physical/sexual violence"
+_column(11)    int   agearrc  :agearrc  %2f    "Age groups of the respondent when came to live permanently in Canada"
+_column(14)    int   ageldimm :ageldimm %2f    "Age group - first became a landed immigrant in Canada"
+_column(17)    int   agelswkc :agelswkc %2f    "Age of respondent when did last paid work."
+_column(20)    int   brthmacc :brthmacc %1f    "Place of birth of respondent - Geographical macro-region"
+_column(22)    int   cextalk  :cextalk  %1f    "Childhood victimization - talked to someone"
+_column(24)    int   cex_040c :cex_040c %2f    "Childhood victimization - Rel. between adult and resp. (phys. inc.)"
+_column(27)    int   cex_065c :cex_065c %2f    "Childhood victimization - Rel. between adult and resp (sex.. inc.)"
+_column(30)    int   chh0014c :chh0014c %1f    "Child(ren) in household - 0 to 14 years"
+_column(32)    int   chrhsdc  :chrhsdc  %1f    "Respondents child(ren) in household - Any age/marital status"
+_column(34)    int   cwp_5080 :cwp_5080 %1f    "Contact with police - other reasons"
+_column(36)    int   dnmov5yr :dnmov5yr %2f    "Residential mobility - Last 5 years"
+_column(39)    int   dur_115c :dur_115c %1f    "How often (cocaine, speed, etc.) - Respondent"
+_column(41)    int   eop_200c :eop_200c %2f    "Spouse/partner - Highest level of education"
+_column(44)    int   hhincg1  :hhincg1  %2f    "Household income - Household income group (before tax)"
+_column(47)    int   hhsizec  :hhsizec  %1f    "Household size of respondent."
+_column(49)    int   incg1    :incg1    %2f    "Income - Personal income group (before tax)"
+_column(52)    int   mrarel   :mrarel   %1f    "Stalking (most recent crim. stalker) - Relationship to the respondent"
+_column(54)    int   msi      :msi      %2f    "Income - Major source (before tax)"
+_column(57)    int   numvactc :numvactc %2f    "Evening activities per month."
+_column(60)    int   parnumc  :parnumc  %1f    "Number of parents the respondent has in household"
+_column(62)    int   prtypec  :prtypec  %1f    "Type of partner respondent has living in the household."
+_column(64)    int   religflg :religflg %2f    "Religious affiliation flag."
+_column(67)    int   relprflg :relprflg %1f    "Religious affiliation flag - Respondent's spouse/partner."
+_column(69)    int   rns370_c :rns370_c %2f    "Stalking (inc. not reported) - Main reason."
+_column(72)    int   wti_120c :wti_120c %2f    "Telework - Number of hours of paid work at home"
+_column(75)    int   yrlndimm :yrlndimm %2f    "Landed immigrant status - Year"
+_column(78)    int   adp_010  :adp_010  %1f    "Dating - Limit contact/called names/ threatened to harm"
+_column(80)    int   ahe_10   :ahe_10   %1f    "Feeling of safety - Alone at home at night"
+_column(82)    int   aip_01   :aip_01   %1f    "Aboriginal group - Spouse/partner"
+_column(84)    int   amb_01   :amb_01   %1f    "Aboriginal group - Respondent"
+_column(86)    int   bpr_02c  :bpr_02c  %2f    "Province of birth."
+_column(89)    int   bpr_16   :bpr_16   %1f    "Landed immigrant status - Ever been a landed immigrant in Canada"
+_column(91)    int   brthcan  :brthcan  %1f    "Place of birth of respondent - Canada"
+_column(93)    int   brthfcan :brthfcan %1f    "Place of birth of father - Canada"
+_column(95)    int   brthmcan :brthmcan %1f    "Place of birth of mother - Canada"
+_column(97)    int   brthpcan :brthpcan %1f    "Place of birth of partner - Canada"
+_column(99)    int   brthregc :brthregc %2f    "Country or region of birth of respondent."
+_column(102)   int   ctzship  :ctzship  %1f    "Citizenship of respondent"
+_column(104)   int   yrarri   :yrarri   %2f    "Range of years when respondent first came to Canada."
+_column(107)   long  recid    :recid    %5f    "Record identification"
+_column(113)   double wght_hsd :wght_hsd %9.4f  "Household weight"
+_column(123)   double wght_per :wght_per %10.4f "Person weight"
+_column(134)   int   cbu_100  :cbu_100  %2f    "Internet use over the past 5 years"
+_column(137)   int   cbu_110  :cbu_110  %1f    "Cyber bullying - Threatening, aggressive e-mails/texts"
+_column(139)   int   cbu_120  :cbu_120  %1f    "Cyber bullying - Aggressive comments through e-mail, etc."
+_column(141)   int   cbu_125  :cbu_125  %1f    "Cyber bullying - Pictures that embarrassed or threatened you"
+_column(143)   int   cbu_130  :cbu_130  %1f    "Cyber bullying - Used respondent's identity to post information"
+_column(145)   int   cbu_140  :cbu_140  %1f    "Cyber bullying - Other cyber stalking/bullying"
+_column(147)   int   cbu_150  :cbu_150  %1f    "Cyber bullying - Past 12 months"
+_column(149)   int   cexabu   :cexabu   %1f    "Childhood victimization - Experienced assault before age 15"
+_column(151)   int   cexphys  :cexphys  %1f    "Childhood victimization - Experienced physical assault before age 15"
+_column(153)   int   cexsex   :cexsex   %1f    "Childhood victimization - Experienced sexual assault before age 15"
+_column(155)   int   cex_070a :cex_070a %1f    "Childhood victimization - Reported to police"
+_column(157)   int   cex_070b :cex_070b %1f    "Childhood victimization - Reported to child protection services"
+_column(159)   int   cex_070c :cex_070c %1f    "Childhood victimization - No report"
+_column(161)   int   cex_080  :cex_080  %1f    "Childhood vict. - Witnessed violence between parents"
+_column(163)   int   cip_10   :cip_10   %1f    "Confidence in the police"
+_column(165)   int   mshsd    :mshsd    %3f    "Most serious household victimization"
+_column(169)   int   msper    :msper    %3f    "Most serious personal incident - Excludes (ex-)spousal/partner"
+_column(173)   int   msvic    :msvic    %3f    "Most serious incident - Excludes (ex-)spousal/(ex-)partner"
+_column(177)   int   cwp_110  :cwp_110  %1f    "Contact with police - Public information session"
+_column(179)   int   cwp_120  :cwp_120  %1f    "Contact with police - Traffic violation"
+_column(181)   int   cwp_140  :cwp_140  %1f    "Contact with police - Witness to a crime"
+_column(183)   int   cwp_160  :cwp_160  %1f    "Contact with police - Emotional, mental, alcohol/drug use problems"
+_column(185)   int   cwp_170  :cwp_170  %1f    "Contact with police - Family member mental health"
+_column(187)   int   agegr10  :agegr10  %1f    "Age group of respondent (groups of 10)"
+_column(189)   int   luc_rst  :luc_rst  %1f    "Population centres indicator"
+_column(192)   str2  prv                %2s    "Province of residence"
+_column(196)   int   region   :region   %1f    "Region of residence of the respondent"
+_column(198)   int   sex      :sex      %1f    "Sex of respondent"
+_column(200)   int   discrim  :discrim  %1f    "Victim of discrimination - 5 years"
+_column(202)   int   dis_10   :dis_10   %1f    "Discrimination - Sex"
+_column(204)   int   dis_15   :dis_15   %1f    "Discrimination - Ethnicity or culture"
+_column(206)   int   dis_20   :dis_20   %1f    "Discrimination - Race or skin colour"
+_column(208)   int   dis_25   :dis_25   %1f    "Discrimination - Physical appearance"
+_column(210)   int   dis_30   :dis_30   %1f    "Discrimination - Religion"
+_column(212)   int   dis_35   :dis_35   %1f    "Discrimination - Sexual orientation"
+_column(214)   int   dis_40   :dis_40   %1f    "Discrimination - Age"
+_column(216)   int   dis_45   :dis_45   %1f    "Discrimination - Physical or mental disability"
+_column(218)   int   dis_50   :dis_50   %1f    "Discrimination - Language"
+_column(220)   int   dis_55   :dis_55   %1f    "Discrimination - Other"
+_column(222)   int   dis_rind :dis_rind %1f    "Discrimination/unfair treatment - Reasons - Single/mutiple indicator"
+_column(224)   int   dwelc    :dwelc    %1f    "Dwelling type of the respondent"
+_column(226)   int   drp_110  :drp_110  %2f    "Alcohol consumption - Spouse/partner"
+_column(229)   int   drp_120  :drp_120  %2f    "5 or more drinks on the same occasion - Spouse/partner"
+_column(232)   int   drr_110  :drr_110  %2f    "Alcohol consumption - Respondent"
+_column(235)   int   drr_120  :drr_120  %2f    "5 or more drinks on the same occasion - Respondent"
+_column(238)   int   dcog_fl  :dcog_fl  %1f    "Learning disability status"
+_column(240)   int   ddis_fl  :ddis_fl  %1f    "Disability status"
+_column(242)   int   dhea_fl  :dhea_fl  %1f    "Hearing disability status"
+_column(244)   int   dmen_fl  :dmen_fl  %1f    "Mental/psychological disability status"
+_column(246)   int   dphy_fl  :dphy_fl  %1f    "Physical disability status"
+_column(248)   int   dunk_fl  :dunk_fl  %1f    "Unknown type of disability"
+_column(250)   int   dvis_fl  :dvis_fl  %1f    "Seeing disability status"
+_column(252)   int   dis_pl   :dis_pl   %1f    "Discrimination or unfair treatment - Places or situations - Number"
+_column(254)   int   dts_20   :dts_20   %1f    "Experienced discrimination - Bank, store, restaurant"
+_column(256)   int   dts_25   :dts_25   %1f    "Experienced discrimination - Work environment"
+_column(258)   int   dts_30   :dts_30   %1f    "Experienced discrimination - Police"
+_column(260)   int   dts_35   :dts_35   %1f    "Experienced discrimination - Courts"
+_column(262)   int   dts_60   :dts_60   %1f    "Experienced discrimination - Canadian border"
+_column(264)   int   dts_65   :dts_65   %1f    "Experienced discrimination - Other"
+_column(266)   int   dup_100  :dup_100  %1f    "Use of marijuana, hashish, hash oil or other cannabis - Spouse/partner"
+_column(268)   int   dup_105  :dup_105  %1f    "How often (marijuana, etc.) - Spouse/partner"
+_column(270)   int   dur_100  :dur_100  %1f    "Use of marijuana, hashish, hash oil or other cannabis - Respondent"
+_column(272)   int   dur_105  :dur_105  %1f    "How often (marijuana, etc.) - Respondent"
+_column(274)   int   dur_110  :dur_110  %1f    "Use of non-prescribed drugs (cocaine, speed, etc) - Respondent"
+_column(276)   int   ehg3_01  :ehg3_01  %2f    "Education - Highest degree"
+_column(279)   int   ehg3_02  :ehg3_02  %1f    "Education - Highest degree - Type of high school"
+_column(281)   int   ehg3_03  :ehg3_03  %1f    "Education - Highest degree - Type of college"
+_column(283)   int   ehg3_04  :ehg3_04  %1f    "Education - Highest degree - Length of program"
+_column(285)   int   ehg3_05  :ehg3_05  %1f    "Education - Highest degree - Type of university"
+_column(287)   int   eduf10   :eduf10   %2f    "Highest level of education - Father - 10 groups"
+_column(290)   int   eduf5    :eduf5    %1f    "Highest level of education - Father - 5 groups"
+_column(292)   int   edum10   :edum10   %2f    "Highest level of education - Mother - 10 groups"
+_column(295)   int   edum5    :edum5    %1f    "Highest level of education - Mother - 5 groups"
+_column(297)   int   edupr10  :edupr10  %2f    "Highest level of education - Spouse/partner - 10 groups"
+_column(300)   int   edupr5   :edupr5   %1f    "Highest level of education - spouse/partner - 5 groups"
+_column(302)   int   eor_01a  :eor_01a  %1f    "Education - Type of institution - Elementary/junior/high school"
+_column(304)   int   eor_01b  :eor_01b  %1f    "Education - Type of institution - Trade school, college"
+_column(306)   int   eor_01c  :eor_01c  %1f    "Education - Type of institution - University"
+_column(308)   int   eor_02   :eor_02   %1f    "Education - Enrollment status"
+_column(310)   int   esc1_01  :esc1_01  %1f    "Education - School Attendance"
+_column(312)   int   agechryg :agechryg %2f    "Age of respondent's youngest single child in the household."
+_column(315)   int   ageprg10 :ageprg10 %2f    "Age group of respondent's spouse/partner (groups of 10)"
+_column(318)   int   aprgrdif :aprgrdif %2f    "Age difference between respondent and spouse/partner"
+_column(321)   int   chrflag  :chrflag  %1f    "Single child(ren) of the respondent living in the household"
+_column(323)   int   chrtime6 :chrtime6 %1f    "Age group of respondents single child(ren) in household"
+_column(325)   int   livarr08 :livarr08 %1f    "Living arrangement of respondent's household (8 categories)"
+_column(327)   int   livarr12 :livarr12 %2f    "Living arrangement of respondent's household (12 categories)"
+_column(330)   int   marstat  :marstat  %2f    "Marital status of the respondent"
+_column(333)   int   multigen :multigen %1f    "Three generations or more family in respondent's household."
+_column(335)   int   senflag  :senflag  %1f    "Senior(s) (age 65 and over) in household"
+_column(337)   int   sexpr    :sexpr    %1f    "Sex of respondent's spouse/partner living in the household"
+_column(339)   int   hom_10   :hom_10   %1f    "Homeless - Ever been homeless"
+_column(341)   int   hom_20   :hom_20   %1f    "Homeless - Longest period of time for which you have been homeless"
+_column(343)   int   hom_30   :hom_30   %1f    "Homeless - Had to temporarily live with family/friends/car/etc."
+_column(345)   int   hom_40   :hom_40   %1f    "Homeless - Longest period living with family/friends/car/etc."
+_column(347)   int   ior_10a  :ior_10a  %1f    "Stalking (emo. impact) - Not at all"
+_column(349)   int   ior_10b  :ior_10b  %1f    "Stalking (emo. impact) - Not much"
+_column(351)   int   ior_10c  :ior_10c  %1f    "Stalking (emo. impact) - Angry"
+_column(353)   int   ior_10d  :ior_10d  %1f    "Stalking (emo. impact) - Upset, confused, frustrated"
+_column(355)   int   ior_10e  :ior_10e  %1f    "Stalking (emo. impact) - Fearful"
+_column(357)   int   ior_10f  :ior_10f  %1f    "Stalking (emo. impact) - More cautious/aware"
+_column(359)   int   ior_10g  :ior_10g  %1f    "Stalking (emo. impact) - Shock/disbelief"
+_column(361)   int   ior_10h  :ior_10h  %1f    "Stalking (emo. impact) - Hurt/disappointment"
+_column(363)   int   ior_10i  :ior_10i  %1f    "Stalking (emo. impact) - Victimized"
+_column(365)   int   ior_10j  :ior_10j  %1f    "Stalking (emo. impact) - Sleeping problems"
+_column(367)   int   ior_10k  :ior_10k  %1f    "Stalking (emo. impact) - Depression/anxiety attacks"
+_column(369)   int   ior_10l  :ior_10l  %1f    "Stalking (emo. impact) - Ashamed/guilty"
+_column(371)   int   ior_10m  :ior_10m  %1f    "Stalking (emo. impact) - Afraid for children"
+_column(373)   int   ior_10n  :ior_10n  %1f    "Stalking (emo. impact) - Annoyed"
+_column(375)   int   ior_10o  :ior_10o  %1f    "Stalking (emo. impact) - Lowered self esteem"
+_column(377)   int   ior_10p  :ior_10p  %1f    "Stalking (emo. impact) - Increased self-reliance"
+_column(379)   int   ior_10q  :ior_10q  %1f    "Stalking (emo. impact) - Problems relating to men/women"
+_column(381)   int   ior_10r  :ior_10r  %1f    "Stalking (emo. impact) - Other"
+_column(383)   int   isl_100  :isl_100  %3f    "Number of relatives/friends respondent feels close to"
+_column(387)   int   lanhsd   :lanhsd   %2f    "Respondent's household language"
+_column(390)   int   lan_01   :lan_01   %1f    "Knowledge of official languages (English and French)"
+_column(392)   int   live_loc :live_loc %2f    "Length of time respondent has lived in current city or local community"
+_column(395)   int   live_dwe :live_dwe %2f    "Length of time respondent has lived in current dwelling"
+_column(398)   int   lrg_10   :lrg_10   %1f    "Legal responsibility of the government"
+_column(400)   int   live_nei :live_nei %2f    "Length of time respondent has lived in current neighbourhood"
+_column(403)   int   lwc_10   :lwc_10   %1f    "Respondent lives in a welcoming community"
+_column(405)   int   map_110c :map_110c %2f    "Main Activity of Spouse/partner - 12 months"
+_column(408)   int   map_130  :map_130  %1f    "Employed - Spouse/partner - Past 12 months"
+_column(410)   int   mar_110  :mar_110  %2f    "Main Activity - 12 months"
+_column(413)   int   mar_133  :mar_133  %1f    "Employed - Last week"
+_column(415)   int   mar_134  :mar_134  %1f    "Job search - Past 4 weeks"
+_column(417)   int   mar_135  :mar_135  %1f    "Employed at any time - Past 12 months"
+_column(419)   int   med_110  :med_110  %1f    "Medication - Help to sleep"
+_column(421)   int   med_120  :med_120  %1f    "Medication - Help to calm down"
+_column(423)   int   med_130  :med_130  %1f    "Medication - Help to get out of depression"
+_column(425)   int   mra_10   :mra_10   %1f    "Stalking - Number of stalkers"
+_column(427)   int   mra_20   :mra_20   %1f    "Stalking (most recent crim. stalker) - Sex"
+_column(429)   int   mre_05   :mre_05   %1f    "Stalking (most recent incident) - Belief harass. from person has ended"
+_column(431)   int   mre_10   :mre_10   %1f    "Stalking (most recent incident) - Duration"
+_column(433)   int   mre_20a  :mre_20a  %1f    "Stalking (most recent incident) - Physical intimidation/threat"
+_column(435)   int   mre_30   :mre_30   %1f    "Stalking (most recent incident) - Grabbed/attacked"
+_column(437)   int   mre_50   :mre_50   %1f    "Stalking (most recent incident) - Fear for their life"
+_column(439)   int   ncp_10   :ncp_10   %1f    "Neighbours contacted police - Heard/saw criminal behaviour"
+_column(441)   int   ncp_20   :ncp_20   %1f    "Neighbours contacted police - Heard/saw family violence in your home"
+_column(443)   int   nsc_10   :nsc_10   %1f    "Neighbourhood - Higher or lower amount of crime"
+_column(445)   int   nsc_20   :nsc_20   %1f    "Neighbourhood - Increase, decrease or same amount of crime"
+_column(447)   int   nsc_30   :nsc_30   %1f    "Feeling of safety - Walking alone at night"
+_column(449)   int   nsc_50   :nsc_50   %1f    "Feeling of safety - Walk alone at night more often"
+_column(451)   int   dwelown  :dwelown  %1f    "Dwelling owned by a member of the household"
+_column(453)   int   pcc_145  :pcc_145  %1f    "Criminal courts - Confidence"
+_column(455)   int   pcc_160  :pcc_160  %1f    "Criminal courts - Contact"
+_column(457)   int   peo_110  :peo_110  %2f    "Evening activity - Work/night classes/meetings/volunteer work"
+_column(460)   int   peo_130  :peo_130  %2f    "Evening activity - Bars, clubs or pubs"
+_column(463)   int   peo_180  :peo_180  %2f    "Evening activity - Other (restaurants/shop/sports/etc.)"
+_column(466)   int   pfc_110  :pfc_110  %1f    "Protection - Changed routine/activities/avoided people or places"
+_column(468)   int   pfc_120  :pfc_120  %1f    "Protection - Installed new locks or security bars"
+_column(470)   int   pfc_130  :pfc_130  %1f    "Protection - Burglar alarms/motion detector/video surveillance"
+_column(472)   int   pfc_140  :pfc_140  %1f    "Protection - Self-defence course"
+_column(474)   int   pfc_160  :pfc_160  %1f    "Protection - Obtained a dog"
+_column(476)   int   pfc_180  :pfc_180  %1f    "Protection - Changed residence or moved"
+_column(478)   int   pfc_185  :pfc_185  %1f    "Protection - Last 12 months"
+_column(480)   int   pfc_190a :pfc_190a %1f    "Protection (12 mo) - Changed routine/activities/avoided people, places"
+_column(482)   int   pfc_190b :pfc_190b %1f    "Protection (12 months) - Installed new locks or security bars"
+_column(484)   int   pfc_190c :pfc_190c %1f    "Protection (12 months) - Burglar alarms/motion detector/surveillance"
+_column(486)   int   pfc_190d :pfc_190d %1f    "Protection (12 months) - Self-defence course"
+_column(488)   int   pfc_190e :pfc_190e %1f    "Protection (12 months) - Obtained a dog"
+_column(490)   int   pfc_190f :pfc_190f %1f    "Protection (12 months) - Changed residence or moved"
+_column(492)   int   vismin   :vismin   %1f    "Visible minority status of the respondent"
+_column(494)   int   plp_110  :plp_110  %1f    "Perception (local police) - Enforcing the laws"
+_column(496)   int   plp_120  :plp_120  %1f    "Perception (local police) - Promptly responding to calls"
+_column(498)   int   plp_130  :plp_130  %1f    "Perception (local police) - Being approachable and easy to talk to"
+_column(500)   int   plp_140  :plp_140  %1f    "Perception (local police) - Information on ways to prevent crime"
+_column(502)   int   plp_150  :plp_150  %1f    "Perception (local police) - Ensuring safety of citizens in area"
+_column(504)   int   plp_160  :plp_160  %1f    "Perception (local police) - Treating people fairly"
+_column(506)   int   pts_10   :pts_10   %1f    "Feeling of safety - Public transport in the city"
+_column(508)   int   pts_30   :pts_30   %1f    "Feeling of safety - Use of public transport at night"
+_column(510)   int   pts_40   :pts_40   %1f    "Feeling of safety - Using public transport at night more often"
+_column(512)   int   qin_10   :qin_10   %1f    "People in neighbourhood - Know each other"
+_column(514)   int   qin_20   :qin_20   %1f    "People in neighbourhood - Help each other"
+_column(516)   int   ree_02   :ree_02   %1f    "Frequency of religious participation - Past 12 months"
+_column(518)   int   ree_03   :ree_03   %2f    "Frequency of religious participation - On ones own - 12 months"
+_column(521)   int   rew_10   :rew_10   %1f    "Ever worked at a job or business"
+_column(523)   int   rlr_110  :rlr_110  %1f    "Importance of religious or spiritual beliefs"
+_column(525)   int   rns_10   :rns_10   %1f    "Stalking - Incident reported to the police"
+_column(527)   int   rns_100  :rns_100  %1f    "Stalking (inc. not reported) - Fear of revenge"
+_column(529)   int   rns_130  :rns_130  %1f    "Stalking (inc. not reported) - Unable to find the stalker"
+_column(531)   int   rns_140  :rns_140  %1f    "Stalking (inc. not reported) - Lack of evidence"
+_column(533)   int   rns_150  :rns_150  %1f    "Stalking (inc. not reported) - Incident not important enough"
+_column(535)   int   rns_160  :rns_160  %1f    "Stalking (inc. not reported) - Police would not have been efficient"
+_column(537)   int   rns_170  :rns_170  %1f    "Stalking (inc. not reported) - Unsatisfactory service in the past"
+_column(539)   int   rns_180  :rns_180  %1f    "Stalking (inc. not reported) - Not able to report"
+_column(541)   int   rns_190  :rns_190  %1f    "Stalking (inc. not reported) - Resp. did not want trouble with the law"
+_column(543)   int   rns_200  :rns_200  %1f    "Stalking (inc not reported) - Did not want stalker in trouble with law"
+_column(545)   int   rns_220  :rns_220  %1f    "Stalking (inc. not reported) - Resp. did not want dealing with police"
+_column(547)   int   rns_230  :rns_230  %1f    "Stalking (inc. not reported) - Private/personal matter"
+_column(549)   int   rns_250  :rns_250  %1f    "Stalking (inc. not reported) - Did not want others to find out"
+_column(551)   int   rns_260  :rns_260  %1f    "Stalking (inc. not reported) - Crime was minor"
+_column(553)   int   rns_270  :rns_270  %1f    "Stalking (inc. not reported) - Nobody was harmed/no financial loss"
+_column(555)   int   rns_280  :rns_280  %1f    "Stalking (inc. not reported) - No harm was intended"
+_column(557)   int   rns_290  :rns_290  %1f    "Stalking (inc. not reported) - Stalker wouldn't be adequately punished"
+_column(559)   int   rns_300  :rns_300  %1f    "Stalking (inc. not reported) - Feared/hassle of the court process"
+_column(561)   int   rns_310  :rns_310  %1f    "Stalking (inc. not reported) - Police would be biased"
+_column(563)   int   rns_350  :rns_350  %1f    "Stalking (inc. not reported) - Incident reported to another official"
+_column(565)   int   rns_360  :rns_360  %1f    "Stalking (inc. not reported) - Other"
+_column(567)   int   ros_10   :ros_10   %1f    "Stalking - Restraining/protective order against stalker"
+_column(569)   int   ros_20   :ros_20   %1f    "Stalking (restraining order) - Violation of restraining order"
+_column(571)   int   ros_30   :ros_30   %1f    "Stalking (restraining order) - Reported the violation to the police"
+_column(573)   int   sbl_100  :sbl_100  %1f    "Sense of belonging - Local community"
+_column(575)   int   scl_10   :scl_10   %1f    "Stalking (charges) - Charges laid against the stalker"
+_column(577)   int   sdq_110  :sdq_110  %1f    "Neighbourhood - Noisy neighbours or loud parties"
+_column(579)   int   sdq_120  :sdq_120  %1f    "Neighbourhood - People hanging around on the streets"
+_column(581)   int   sdq_140  :sdq_140  %1f    "Neighbourhood - Garbage or litter lying around"
+_column(583)   int   sdq_150  :sdq_150  %1f    "Neighbourhood - Vandalism/graffiti/other damage to property/vehicles"
+_column(585)   int   sdq_160  :sdq_160  %1f    "Neighbourhood - People attacked because of skin colour/ethn./religion"
+_column(587)   int   sdq_170  :sdq_170  %1f    "Neighbourhood - People using or dealing drugs"
+_column(589)   int   sdq_180  :sdq_180  %1f    "Neighbourhood - People being drunk or rowdy in public places"
+_column(591)   int   sfc_10   :sfc_10   %1f    "Crime safety - Carry something to defend yourself or alert others"
+_column(593)   int   sfc_20   :sfc_20   %1f    "Crime safety - Check back seat of car for intruders"
+_column(595)   int   sfc_30   :sfc_30   %1f    "Crime safety - Plan route with safety in mind"
+_column(597)   int   sfc_40   :sfc_40   %1f    "Crime safety - Stay at home at night"
+_column(599)   int   sfc_50   :sfc_50   %1f    "Crime safety - Lock windows and doors at home"
+_column(601)   int   sfc_60   :sfc_60   %1f    "Crime safety - Use car/taxi/etc. for safety"
+_column(603)   int   shs_10   :shs_10   %1f    "Stalking - Told someone else other than the police about the incident"
+_column(605)   int   shs_20a  :shs_20a  %1f    "Stalking (spoke with someone) - Family member"
+_column(607)   int   shs_20b  :shs_20b  %1f    "Stalking (spoke with someone) - Friend or neighbour"
+_column(609)   int   shs_20c  :shs_20c  %1f    "Stalking (spoke with someone) - Co-worker"
+_column(611)   int   shs_20d  :shs_20d  %1f    "Stalking (spoke with someone) - Doctor or nurse"
+_column(613)   int   shs_20e  :shs_20e  %1f    "Stalking (spoke with someone) - Lawyer"
+_column(615)   int   shs_20f  :shs_20f  %1f    "Stalking (spoke with someone) - Priest/rabbi/imam/elder/etc."
+_column(617)   int   shs_20g  :shs_20g  %1f    "Stalking (spoke with someone) - Counsellor/psychologist"
+_column(619)   int   shs_20h  :shs_20h  %1f    "Stalking (spoke with someone) - Someone else"
+_column(621)   int   slm_01   :slm_01   %2f    "Subjective well-being"
+_column(624)   int   sps_10   :sps_10   %2f    "Satisfaction with personal safety from crime"
+_column(627)   int   spy_10   :spy_10   %1f    "Stalking - Incident occur in the past 12 months"
+_column(629)   int   srh_110  :srh_110  %1f    "Self-rated general health"
+_column(631)   int   srh_115  :srh_115  %1f    "Self-rated mental health"
+_column(633)   int   stalking :stalking %1f    "Victim of stalking"
+_column(635)   int   tip_10   :tip_10   %1f    "Trust - Members of family"
+_column(637)   int   tip_15   :tip_15   %1f    "Trust - People in neighbourhood"
+_column(639)   int   tip_20   :tip_20   %2f    "Trust - People from work or school"
+_column(642)   int   tip_25   :tip_25   %1f    "Trust - Strangers"
+_column(644)   int   visminpr :visminpr %1f    "Visible minority status of the respondent's spouse/partner"
+_column(646)   int   totvic   :totvic   %1f    "Number of victimizations - Excludes (ex-)spousal/(ex-)partner"
+_column(648)   int   naic12cy :naic12cy %2f    "Type of industry, business or service - NAICS 2012 (20 categories)"
+_column(651)   int   noc1110y :noc1110y %2f    "Type of work or occupation - NOC 2011 (10 categories)"
+_column(654)   int   noc1140y :noc1140y %2f    "Type of work or occupation - NOC 2011 (40 categories)"
+_column(657)   int   wet_110  :wet_110  %2f    "Number of weeks employed - Past 12 months"
+_column(660)   float whw_120  :whw_120  %5.1f  "Number of hours worked per week at job"
+_column(666)   int   whw_230  :whw_230  %2f    "Work schedule at main job"
+_column(669)   int   wly_150  :wly_150  %1f    "Employment - Conditions of employment in this job"
+_column(671)   double wtbs_001 :wtbs_001 %10.4f "Bootstrap weight # 1 for personal weight"
+_column(682)   double wtbs_002           %10.4f ""
+_column(693)   double wtbs_003           %10.4f ""
+_column(704)   double wtbs_004           %10.4f ""
+_column(715)   double wtbs_005           %10.4f ""
+_column(726)   double wtbs_006           %10.4f ""
+_column(737)   double wtbs_007           %10.4f ""
+_column(748)   double wtbs_008           %10.4f ""
+_column(759)   double wtbs_009           %10.4f ""
+_column(770)   double wtbs_010           %10.4f ""
+_column(781)   double wtbs_011           %10.4f ""
+_column(792)   double wtbs_012           %10.4f ""
+_column(803)   double wtbs_013           %10.4f ""
+_column(814)   double wtbs_014           %10.4f ""
+_column(825)   double wtbs_015           %10.4f ""
+_column(836)   double wtbs_016           %10.4f ""
+_column(847)   double wtbs_017           %10.4f ""
+_column(858)   double wtbs_018           %10.4f ""
+_column(869)   double wtbs_019           %10.4f ""
+_column(880)   double wtbs_020           %10.4f ""
+_column(891)   double wtbs_021           %10.4f ""
+_column(902)   double wtbs_022           %10.4f ""
+_column(913)   double wtbs_023           %10.4f ""
+_column(924)   double wtbs_024           %10.4f ""
+_column(935)   double wtbs_025           %10.4f ""
+_column(946)   double wtbs_026           %10.4f ""
+_column(957)   double wtbs_027           %10.4f ""
+_column(968)   double wtbs_028           %10.4f ""
+_column(979)   double wtbs_029           %10.4f ""
+_column(990)   double wtbs_030           %10.4f ""
+_column(1001)  double wtbs_031           %10.4f ""
+_column(1012)  double wtbs_032           %10.4f ""
+_column(1023)  double wtbs_033           %10.4f ""
+_column(1034)  double wtbs_034           %10.4f ""
+_column(1045)  double wtbs_035           %10.4f ""
+_column(1056)  double wtbs_036           %10.4f ""
+_column(1067)  double wtbs_037           %10.4f ""
+_column(1078)  double wtbs_038           %10.4f ""
+_column(1089)  double wtbs_039           %10.4f ""
+_column(1100)  double wtbs_040           %10.4f ""
+_column(1111)  double wtbs_041           %10.4f ""
+_column(1122)  double wtbs_042           %10.4f ""
+_column(1133)  double wtbs_043           %10.4f ""
+_column(1144)  double wtbs_044           %10.4f ""
+_column(1155)  double wtbs_045           %10.4f ""
+_column(1166)  double wtbs_046           %10.4f ""
+_column(1177)  double wtbs_047           %10.4f ""
+_column(1188)  double wtbs_048           %10.4f ""
+_column(1199)  double wtbs_049           %10.4f ""
+_column(1210)  double wtbs_050           %10.4f ""
+_column(1221)  double wtbs_051           %10.4f ""
+_column(1232)  double wtbs_052           %10.4f ""
+_column(1243)  double wtbs_053           %10.4f ""
+_column(1254)  double wtbs_054           %10.4f ""
+_column(1265)  double wtbs_055           %10.4f ""
+_column(1276)  double wtbs_056           %10.4f ""
+_column(1287)  double wtbs_057           %10.4f ""
+_column(1298)  double wtbs_058           %10.4f ""
+_column(1309)  double wtbs_059           %10.4f ""
+_column(1320)  double wtbs_060           %10.4f ""
+_column(1331)  double wtbs_061           %10.4f ""
+_column(1342)  double wtbs_062           %10.4f ""
+_column(1353)  double wtbs_063           %10.4f ""
+_column(1364)  double wtbs_064           %10.4f ""
+_column(1375)  double wtbs_065           %10.4f ""
+_column(1386)  double wtbs_066           %10.4f ""
+_column(1397)  double wtbs_067           %10.4f ""
+_column(1408)  double wtbs_068           %10.4f ""
+_column(1419)  double wtbs_069           %10.4f ""
+_column(1430)  double wtbs_070           %10.4f ""
+_column(1441)  double wtbs_071           %10.4f ""
+_column(1452)  double wtbs_072           %10.4f ""
+_column(1463)  double wtbs_073           %10.4f ""
+_column(1474)  double wtbs_074           %10.4f ""
+_column(1485)  double wtbs_075           %10.4f ""
+_column(1496)  double wtbs_076           %10.4f ""
+_column(1507)  double wtbs_077           %10.4f ""
+_column(1518)  double wtbs_078           %10.4f ""
+_column(1529)  double wtbs_079           %10.4f ""
+_column(1540)  double wtbs_080           %10.4f ""
+_column(1551)  double wtbs_081           %10.4f ""
+_column(1562)  double wtbs_082           %10.4f ""
+_column(1573)  double wtbs_083           %10.4f ""
+_column(1584)  double wtbs_084           %10.4f ""
+_column(1595)  double wtbs_085           %10.4f ""
+_column(1606)  double wtbs_086           %10.4f ""
+_column(1617)  double wtbs_087           %10.4f ""
+_column(1628)  double wtbs_088           %10.4f ""
+_column(1639)  double wtbs_089           %10.4f ""
+_column(1650)  double wtbs_090           %10.4f ""
+_column(1661)  double wtbs_091           %10.4f ""
+_column(1672)  double wtbs_092           %10.4f ""
+_column(1683)  double wtbs_093           %10.4f ""
+_column(1694)  double wtbs_094           %10.4f ""
+_column(1705)  double wtbs_095           %10.4f ""
+_column(1716)  double wtbs_096           %10.4f ""
+_column(1727)  double wtbs_097           %10.4f ""
+_column(1738)  double wtbs_098           %10.4f ""
+_column(1749)  double wtbs_099           %10.4f ""
+_column(1760)  double wtbs_100           %10.4f ""
+_column(1771)  double wtbs_101           %10.4f ""
+_column(1782)  double wtbs_102           %10.4f ""
+_column(1793)  double wtbs_103           %10.4f ""
+_column(1804)  double wtbs_104           %10.4f ""
+_column(1815)  double wtbs_105           %10.4f ""
+_column(1826)  double wtbs_106           %10.4f ""
+_column(1837)  double wtbs_107           %10.4f ""
+_column(1848)  double wtbs_108           %10.4f ""
+_column(1859)  double wtbs_109           %10.4f ""
+_column(1870)  double wtbs_110           %10.4f ""
+_column(1881)  double wtbs_111           %10.4f ""
+_column(1892)  double wtbs_112           %10.4f ""
+_column(1903)  double wtbs_113           %10.4f ""
+_column(1914)  double wtbs_114           %10.4f ""
+_column(1925)  double wtbs_115           %10.4f ""
+_column(1936)  double wtbs_116           %10.4f ""
+_column(1947)  double wtbs_117           %10.4f ""
+_column(1958)  double wtbs_118           %10.4f ""
+_column(1969)  double wtbs_119           %10.4f ""
+_column(1980)  double wtbs_120           %10.4f ""
+_column(1991)  double wtbs_121           %10.4f ""
+_column(2002)  double wtbs_122           %10.4f ""
+_column(2013)  double wtbs_123           %10.4f ""
+_column(2024)  double wtbs_124           %10.4f ""
+_column(2035)  double wtbs_125           %10.4f ""
+_column(2046)  double wtbs_126           %10.4f ""
+_column(2057)  double wtbs_127           %10.4f ""
+_column(2068)  double wtbs_128           %10.4f ""
+_column(2079)  double wtbs_129           %10.4f ""
+_column(2090)  double wtbs_130           %10.4f ""
+_column(2101)  double wtbs_131           %10.4f ""
+_column(2112)  double wtbs_132           %10.4f ""
+_column(2123)  double wtbs_133           %10.4f ""
+_column(2134)  double wtbs_134           %10.4f ""
+_column(2145)  double wtbs_135           %10.4f ""
+_column(2156)  double wtbs_136           %10.4f ""
+_column(2167)  double wtbs_137           %10.4f ""
+_column(2178)  double wtbs_138           %10.4f ""
+_column(2189)  double wtbs_139           %10.4f ""
+_column(2200)  double wtbs_140           %10.4f ""
+_column(2211)  double wtbs_141           %10.4f ""
+_column(2222)  double wtbs_142           %10.4f ""
+_column(2233)  double wtbs_143           %10.4f ""
+_column(2244)  double wtbs_144           %10.4f ""
+_column(2255)  double wtbs_145           %10.4f ""
+_column(2266)  double wtbs_146           %10.4f ""
+_column(2277)  double wtbs_147           %10.4f ""
+_column(2288)  double wtbs_148           %10.4f ""
+_column(2299)  double wtbs_149           %10.4f ""
+_column(2310)  double wtbs_150           %10.4f ""
+_column(2321)  double wtbs_151           %10.4f ""
+_column(2332)  double wtbs_152           %10.4f ""
+_column(2343)  double wtbs_153           %10.4f ""
+_column(2354)  double wtbs_154           %10.4f ""
+_column(2365)  double wtbs_155           %10.4f ""
+_column(2376)  double wtbs_156           %10.4f ""
+_column(2387)  double wtbs_157           %10.4f ""
+_column(2398)  double wtbs_158           %10.4f ""
+_column(2409)  double wtbs_159           %10.4f ""
+_column(2420)  double wtbs_160           %10.4f ""
+_column(2431)  double wtbs_161           %10.4f ""
+_column(2442)  double wtbs_162           %10.4f ""
+_column(2453)  double wtbs_163           %10.4f ""
+_column(2464)  double wtbs_164           %10.4f ""
+_column(2475)  double wtbs_165           %10.4f ""
+_column(2486)  double wtbs_166           %10.4f ""
+_column(2497)  double wtbs_167           %10.4f ""
+_column(2508)  double wtbs_168           %10.4f ""
+_column(2519)  double wtbs_169           %10.4f ""
+_column(2530)  double wtbs_170           %10.4f ""
+_column(2541)  double wtbs_171           %10.4f ""
+_column(2552)  double wtbs_172           %10.4f ""
+_column(2563)  double wtbs_173           %10.4f ""
+_column(2574)  double wtbs_174           %10.4f ""
+_column(2585)  double wtbs_175           %10.4f ""
+_column(2596)  double wtbs_176           %10.4f ""
+_column(2607)  double wtbs_177           %10.4f ""
+_column(2618)  double wtbs_178           %10.4f ""
+_column(2629)  double wtbs_179           %10.4f ""
+_column(2640)  double wtbs_180           %10.4f ""
+_column(2651)  double wtbs_181           %10.4f ""
+_column(2662)  double wtbs_182           %10.4f ""
+_column(2673)  double wtbs_183           %10.4f ""
+_column(2684)  double wtbs_184           %10.4f ""
+_column(2695)  double wtbs_185           %10.4f ""
+_column(2706)  double wtbs_186           %10.4f ""
+_column(2717)  double wtbs_187           %10.4f ""
+_column(2728)  double wtbs_188           %10.4f ""
+_column(2739)  double wtbs_189           %10.4f ""
+_column(2750)  double wtbs_190           %10.4f ""
+_column(2761)  double wtbs_191           %10.4f ""
+_column(2772)  double wtbs_192           %10.4f ""
+_column(2783)  double wtbs_193           %10.4f ""
+_column(2794)  double wtbs_194           %10.4f ""
+_column(2805)  double wtbs_195           %10.4f ""
+_column(2816)  double wtbs_196           %10.4f ""
+_column(2827)  double wtbs_197           %10.4f ""
+_column(2838)  double wtbs_198           %10.4f ""
+_column(2849)  double wtbs_199           %10.4f ""
+_column(2860)  double wtbs_200           %10.4f ""
+_column(2871)  double wtbs_201           %10.4f ""
+_column(2882)  double wtbs_202           %10.4f ""
+_column(2893)  double wtbs_203           %10.4f ""
+_column(2904)  double wtbs_204           %10.4f ""
+_column(2915)  double wtbs_205           %10.4f ""
+_column(2926)  double wtbs_206           %10.4f ""
+_column(2937)  double wtbs_207           %10.4f ""
+_column(2948)  double wtbs_208           %10.4f ""
+_column(2959)  double wtbs_209           %10.4f ""
+_column(2970)  double wtbs_210           %10.4f ""
+_column(2981)  double wtbs_211           %10.4f ""
+_column(2992)  double wtbs_212           %10.4f ""
+_column(3003)  double wtbs_213           %10.4f ""
+_column(3014)  double wtbs_214           %10.4f ""
+_column(3025)  double wtbs_215           %10.4f ""
+_column(3036)  double wtbs_216           %10.4f ""
+_column(3047)  double wtbs_217           %10.4f ""
+_column(3058)  double wtbs_218           %10.4f ""
+_column(3069)  double wtbs_219           %10.4f ""
+_column(3080)  double wtbs_220           %10.4f ""
+_column(3091)  double wtbs_221           %10.4f ""
+_column(3102)  double wtbs_222           %10.4f ""
+_column(3113)  double wtbs_223           %10.4f ""
+_column(3124)  double wtbs_224           %10.4f ""
+_column(3135)  double wtbs_225           %10.4f ""
+_column(3146)  double wtbs_226           %10.4f ""
+_column(3157)  double wtbs_227           %10.4f ""
+_column(3168)  double wtbs_228           %10.4f ""
+_column(3179)  double wtbs_229           %10.4f ""
+_column(3190)  double wtbs_230           %10.4f ""
+_column(3201)  double wtbs_231           %10.4f ""
+_column(3212)  double wtbs_232           %10.4f ""
+_column(3223)  double wtbs_233           %10.4f ""
+_column(3234)  double wtbs_234           %10.4f ""
+_column(3245)  double wtbs_235           %10.4f ""
+_column(3256)  double wtbs_236           %10.4f ""
+_column(3267)  double wtbs_237           %10.4f ""
+_column(3278)  double wtbs_238           %10.4f ""
+_column(3289)  double wtbs_239           %10.4f ""
+_column(3300)  double wtbs_240           %10.4f ""
+_column(3311)  double wtbs_241           %10.4f ""
+_column(3322)  double wtbs_242           %10.4f ""
+_column(3333)  double wtbs_243           %10.4f ""
+_column(3344)  double wtbs_244           %10.4f ""
+_column(3355)  double wtbs_245           %10.4f ""
+_column(3366)  double wtbs_246           %10.4f ""
+_column(3377)  double wtbs_247           %10.4f ""
+_column(3388)  double wtbs_248           %10.4f ""
+_column(3399)  double wtbs_249           %10.4f ""
+_column(3410)  double wtbs_250           %10.4f ""
+_column(3421)  double wtbs_251           %10.4f ""
+_column(3432)  double wtbs_252           %10.4f ""
+_column(3443)  double wtbs_253           %10.4f ""
+_column(3454)  double wtbs_254           %10.4f ""
+_column(3465)  double wtbs_255           %10.4f ""
+_column(3476)  double wtbs_256           %10.4f ""
+_column(3487)  double wtbs_257           %10.4f ""
+_column(3498)  double wtbs_258           %10.4f ""
+_column(3509)  double wtbs_259           %10.4f ""
+_column(3520)  double wtbs_260           %10.4f ""
+_column(3531)  double wtbs_261           %10.4f ""
+_column(3542)  double wtbs_262           %10.4f ""
+_column(3553)  double wtbs_263           %10.4f ""
+_column(3564)  double wtbs_264           %10.4f ""
+_column(3575)  double wtbs_265           %10.4f ""
+_column(3586)  double wtbs_266           %10.4f ""
+_column(3597)  double wtbs_267           %10.4f ""
+_column(3608)  double wtbs_268           %10.4f ""
+_column(3619)  double wtbs_269           %10.4f ""
+_column(3630)  double wtbs_270           %10.4f ""
+_column(3641)  double wtbs_271           %10.4f ""
+_column(3652)  double wtbs_272           %10.4f ""
+_column(3663)  double wtbs_273           %10.4f ""
+_column(3674)  double wtbs_274           %10.4f ""
+_column(3685)  double wtbs_275           %10.4f ""
+_column(3696)  double wtbs_276           %10.4f ""
+_column(3707)  double wtbs_277           %10.4f ""
+_column(3718)  double wtbs_278           %10.4f ""
+_column(3729)  double wtbs_279           %10.4f ""
+_column(3740)  double wtbs_280           %10.4f ""
+_column(3751)  double wtbs_281           %10.4f ""
+_column(3762)  double wtbs_282           %10.4f ""
+_column(3773)  double wtbs_283           %10.4f ""
+_column(3784)  double wtbs_284           %10.4f ""
+_column(3795)  double wtbs_285           %10.4f ""
+_column(3806)  double wtbs_286           %10.4f ""
+_column(3817)  double wtbs_287           %10.4f ""
+_column(3828)  double wtbs_288           %10.4f ""
+_column(3839)  double wtbs_289           %10.4f ""
+_column(3850)  double wtbs_290           %10.4f ""
+_column(3861)  double wtbs_291           %10.4f ""
+_column(3872)  double wtbs_292           %10.4f ""
+_column(3883)  double wtbs_293           %10.4f ""
+_column(3894)  double wtbs_294           %10.4f ""
+_column(3905)  double wtbs_295           %10.4f ""
+_column(3916)  double wtbs_296           %10.4f ""
+_column(3927)  double wtbs_297           %10.4f ""
+_column(3938)  double wtbs_298           %10.4f ""
+_column(3949)  double wtbs_299           %10.4f ""
+_column(3960)  double wtbs_300           %10.4f ""
+_column(3971)  double wtbs_301           %10.4f ""
+_column(3982)  double wtbs_302           %10.4f ""
+_column(3993)  double wtbs_303           %10.4f ""
+_column(4004)  double wtbs_304           %10.4f ""
+_column(4015)  double wtbs_305           %10.4f ""
+_column(4026)  double wtbs_306           %10.4f ""
+_column(4037)  double wtbs_307           %10.4f ""
+_column(4048)  double wtbs_308           %10.4f ""
+_column(4059)  double wtbs_309           %10.4f ""
+_column(4070)  double wtbs_310           %10.4f ""
+_column(4081)  double wtbs_311           %10.4f ""
+_column(4092)  double wtbs_312           %10.4f ""
+_column(4103)  double wtbs_313           %10.4f ""
+_column(4114)  double wtbs_314           %10.4f ""
+_column(4125)  double wtbs_315           %10.4f ""
+_column(4136)  double wtbs_316           %10.4f ""
+_column(4147)  double wtbs_317           %10.4f ""
+_column(4158)  double wtbs_318           %10.4f ""
+_column(4169)  double wtbs_319           %10.4f ""
+_column(4180)  double wtbs_320           %10.4f ""
+_column(4191)  double wtbs_321           %10.4f ""
+_column(4202)  double wtbs_322           %10.4f ""
+_column(4213)  double wtbs_323           %10.4f ""
+_column(4224)  double wtbs_324           %10.4f ""
+_column(4235)  double wtbs_325           %10.4f ""
+_column(4246)  double wtbs_326           %10.4f ""
+_column(4257)  double wtbs_327           %10.4f ""
+_column(4268)  double wtbs_328           %10.4f ""
+_column(4279)  double wtbs_329           %10.4f ""
+_column(4290)  double wtbs_330           %10.4f ""
+_column(4301)  double wtbs_331           %10.4f ""
+_column(4312)  double wtbs_332           %10.4f ""
+_column(4323)  double wtbs_333           %10.4f ""
+_column(4334)  double wtbs_334           %10.4f ""
+_column(4345)  double wtbs_335           %10.4f ""
+_column(4356)  double wtbs_336           %10.4f ""
+_column(4367)  double wtbs_337           %10.4f ""
+_column(4378)  double wtbs_338           %10.4f ""
+_column(4389)  double wtbs_339           %10.4f ""
+_column(4400)  double wtbs_340           %10.4f ""
+_column(4411)  double wtbs_341           %10.4f ""
+_column(4422)  double wtbs_342           %10.4f ""
+_column(4433)  double wtbs_343           %10.4f ""
+_column(4444)  double wtbs_344           %10.4f ""
+_column(4455)  double wtbs_345           %10.4f ""
+_column(4466)  double wtbs_346           %10.4f ""
+_column(4477)  double wtbs_347           %10.4f ""
+_column(4488)  double wtbs_348           %10.4f ""
+_column(4499)  double wtbs_349           %10.4f ""
+_column(4510)  double wtbs_350           %10.4f ""
+_column(4521)  double wtbs_351           %10.4f ""
+_column(4532)  double wtbs_352           %10.4f ""
+_column(4543)  double wtbs_353           %10.4f ""
+_column(4554)  double wtbs_354           %10.4f ""
+_column(4565)  double wtbs_355           %10.4f ""
+_column(4576)  double wtbs_356           %10.4f ""
+_column(4587)  double wtbs_357           %10.4f ""
+_column(4598)  double wtbs_358           %10.4f ""
+_column(4609)  double wtbs_359           %10.4f ""
+_column(4620)  double wtbs_360           %10.4f ""
+_column(4631)  double wtbs_361           %10.4f ""
+_column(4642)  double wtbs_362           %10.4f ""
+_column(4653)  double wtbs_363           %10.4f ""
+_column(4664)  double wtbs_364           %10.4f ""
+_column(4675)  double wtbs_365           %10.4f ""
+_column(4686)  double wtbs_366           %10.4f ""
+_column(4697)  double wtbs_367           %10.4f ""
+_column(4708)  double wtbs_368           %10.4f ""
+_column(4719)  double wtbs_369           %10.4f ""
+_column(4730)  double wtbs_370           %10.4f ""
+_column(4741)  double wtbs_371           %10.4f ""
+_column(4752)  double wtbs_372           %10.4f ""
+_column(4763)  double wtbs_373           %10.4f ""
+_column(4774)  double wtbs_374           %10.4f ""
+_column(4785)  double wtbs_375           %10.4f ""
+_column(4796)  double wtbs_376           %10.4f ""
+_column(4807)  double wtbs_377           %10.4f ""
+_column(4818)  double wtbs_378           %10.4f ""
+_column(4829)  double wtbs_379           %10.4f ""
+_column(4840)  double wtbs_380           %10.4f ""
+_column(4851)  double wtbs_381           %10.4f ""
+_column(4862)  double wtbs_382           %10.4f ""
+_column(4873)  double wtbs_383           %10.4f ""
+_column(4884)  double wtbs_384           %10.4f ""
+_column(4895)  double wtbs_385           %10.4f ""
+_column(4906)  double wtbs_386           %10.4f ""
+_column(4917)  double wtbs_387           %10.4f ""
+_column(4928)  double wtbs_388           %10.4f ""
+_column(4939)  double wtbs_389           %10.4f ""
+_column(4950)  double wtbs_390           %10.4f ""
+_column(4961)  double wtbs_391           %10.4f ""
+_column(4972)  double wtbs_392           %10.4f ""
+_column(4983)  double wtbs_393           %10.4f ""
+_column(4994)  double wtbs_394           %10.4f ""
+_column(5005)  double wtbs_395           %10.4f ""
+_column(5016)  double wtbs_396           %10.4f ""
+_column(5027)  double wtbs_397           %10.4f ""
+_column(5038)  double wtbs_398           %10.4f ""
+_column(5049)  double wtbs_399           %10.4f ""
+_column(5060)  double wtbs_400           %10.4f ""
+_column(5071)  double wtbs_401           %10.4f ""
+_column(5082)  double wtbs_402           %10.4f ""
+_column(5093)  double wtbs_403           %10.4f ""
+_column(5104)  double wtbs_404           %10.4f ""
+_column(5115)  double wtbs_405           %10.4f ""
+_column(5126)  double wtbs_406           %10.4f ""
+_column(5137)  double wtbs_407           %10.4f ""
+_column(5148)  double wtbs_408           %10.4f ""
+_column(5159)  double wtbs_409           %10.4f ""
+_column(5170)  double wtbs_410           %10.4f ""
+_column(5181)  double wtbs_411           %10.4f ""
+_column(5192)  double wtbs_412           %10.4f ""
+_column(5203)  double wtbs_413           %10.4f ""
+_column(5214)  double wtbs_414           %10.4f ""
+_column(5225)  double wtbs_415           %10.4f ""
+_column(5236)  double wtbs_416           %10.4f ""
+_column(5247)  double wtbs_417           %10.4f ""
+_column(5258)  double wtbs_418           %10.4f ""
+_column(5269)  double wtbs_419           %10.4f ""
+_column(5280)  double wtbs_420           %10.4f ""
+_column(5291)  double wtbs_421           %10.4f ""
+_column(5302)  double wtbs_422           %10.4f ""
+_column(5313)  double wtbs_423           %10.4f ""
+_column(5324)  double wtbs_424           %10.4f ""
+_column(5335)  double wtbs_425           %10.4f ""
+_column(5346)  double wtbs_426           %10.4f ""
+_column(5357)  double wtbs_427           %10.4f ""
+_column(5368)  double wtbs_428           %10.4f ""
+_column(5379)  double wtbs_429           %10.4f ""
+_column(5390)  double wtbs_430           %10.4f ""
+_column(5401)  double wtbs_431           %10.4f ""
+_column(5412)  double wtbs_432           %10.4f ""
+_column(5423)  double wtbs_433           %10.4f ""
+_column(5434)  double wtbs_434           %10.4f ""
+_column(5445)  double wtbs_435           %10.4f ""
+_column(5456)  double wtbs_436           %10.4f ""
+_column(5467)  double wtbs_437           %10.4f ""
+_column(5478)  double wtbs_438           %10.4f ""
+_column(5489)  double wtbs_439           %10.4f ""
+_column(5500)  double wtbs_440           %10.4f ""
+_column(5511)  double wtbs_441           %10.4f ""
+_column(5522)  double wtbs_442           %10.4f ""
+_column(5533)  double wtbs_443           %10.4f ""
+_column(5544)  double wtbs_444           %10.4f ""
+_column(5555)  double wtbs_445           %10.4f ""
+_column(5566)  double wtbs_446           %10.4f ""
+_column(5577)  double wtbs_447           %10.4f ""
+_column(5588)  double wtbs_448           %10.4f ""
+_column(5599)  double wtbs_449           %10.4f ""
+_column(5610)  double wtbs_450           %10.4f ""
+_column(5621)  double wtbs_451           %10.4f ""
+_column(5632)  double wtbs_452           %10.4f ""
+_column(5643)  double wtbs_453           %10.4f ""
+_column(5654)  double wtbs_454           %10.4f ""
+_column(5665)  double wtbs_455           %10.4f ""
+_column(5676)  double wtbs_456           %10.4f ""
+_column(5687)  double wtbs_457           %10.4f ""
+_column(5698)  double wtbs_458           %10.4f ""
+_column(5709)  double wtbs_459           %10.4f ""
+_column(5720)  double wtbs_460           %10.4f ""
+_column(5731)  double wtbs_461           %10.4f ""
+_column(5742)  double wtbs_462           %10.4f ""
+_column(5753)  double wtbs_463           %10.4f ""
+_column(5764)  double wtbs_464           %10.4f ""
+_column(5775)  double wtbs_465           %10.4f ""
+_column(5786)  double wtbs_466           %10.4f ""
+_column(5797)  double wtbs_467           %10.4f ""
+_column(5808)  double wtbs_468           %10.4f ""
+_column(5819)  double wtbs_469           %10.4f ""
+_column(5830)  double wtbs_470           %10.4f ""
+_column(5841)  double wtbs_471           %10.4f ""
+_column(5852)  double wtbs_472           %10.4f ""
+_column(5863)  double wtbs_473           %10.4f ""
+_column(5874)  double wtbs_474           %10.4f ""
+_column(5885)  double wtbs_475           %10.4f ""
+_column(5896)  double wtbs_476           %10.4f ""
+_column(5907)  double wtbs_477           %10.4f ""
+_column(5918)  double wtbs_478           %10.4f ""
+_column(5929)  double wtbs_479           %10.4f ""
+_column(5940)  double wtbs_480           %10.4f ""
+_column(5951)  double wtbs_481           %10.4f ""
+_column(5962)  double wtbs_482           %10.4f ""
+_column(5973)  double wtbs_483           %10.4f ""
+_column(5984)  double wtbs_484           %10.4f ""
+_column(5995)  double wtbs_485           %10.4f ""
+_column(6006)  double wtbs_486           %10.4f ""
+_column(6017)  double wtbs_487           %10.4f ""
+_column(6028)  double wtbs_488           %10.4f ""
+_column(6039)  double wtbs_489           %10.4f ""
+_column(6050)  double wtbs_490           %10.4f ""
+_column(6061)  double wtbs_491           %10.4f ""
+_column(6072)  double wtbs_492           %10.4f ""
+_column(6083)  double wtbs_493           %10.4f ""
+_column(6094)  double wtbs_494           %10.4f ""
+_column(6105)  double wtbs_495           %10.4f ""
+_column(6116)  double wtbs_496           %10.4f ""
+_column(6127)  double wtbs_497           %10.4f ""
+_column(6138)  double wtbs_498           %10.4f ""
+_column(6149)  double wtbs_499           %10.4f ""
+_column(6160)  double wtbs_500           %10.4f ""
+}
